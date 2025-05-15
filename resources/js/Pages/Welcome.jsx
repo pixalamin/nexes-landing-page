@@ -14,6 +14,75 @@ const Welcome = () => {
         seconds: 40
     });
 
+    // Add carousel state
+    const [currentSlide, setCurrentSlide] = useState(0);
+
+    // Carousel data
+    const carouselItems = [
+        {
+            title: "AI Chat",
+            description: "যখন প্রশ্ন তখনই উত্তর! Learning Assistant Nexes AI, যেকোনো জায়গা থেকে চ্যাটে সহজে সাহায্য করবে ২৪/৭",
+            bgColor: "#A685E2",
+            image: "/assets/images/keno-2.png"
+        },
+        {
+            title: "Explore Books",
+            description: "Nexes AI-তে বাংলাদেশের শিক্ষা Curriculum এর School/College/University, Job Preparation সকল বই, নোট এবং সাজানো Library, এগুলোতে রেফারেন্স দিয়ে বই বা File আপলোড করে নিজস্ব Personal Library.",
+            bgColor: "#3EC6FF",
+            image: "/assets/images/keno-2.png"
+        },
+        {
+            title: "Educational Games",
+            description: "Boring পড়াশোনাকে একঘেয়ে নয়, এবার শেখা হবে আনন্দের সাথে! Nexes AI নিয়ে এসেছে দারুন Interactive Game, যা পড়ার অভিজ্ঞতাকে করে তোলে আরও engaging ও সহজ মনে রাখার জন্য।",
+            bgColor: "#2563EB",
+            image: "/assets/images/keno-2.png"
+        },
+        {
+            title: "Smart Flashcards",
+            description: "ফ্ল্যাশকার্ড দিয়ে সহজে রিভিশন নিন, যেকোনো টপিক দ্রুত মনে রাখুন।",
+            bgColor: "#F59E42",
+            image: "/assets/images/keno-2.png"
+        },
+        {
+            title: "Instant Notes",
+            description: "নোট তৈরি করুন এক ক্লিকে, পড়াশোনা হোক আরও সহজ।",
+            bgColor: "#22C55E",
+            image: "/assets/images/keno-2.png"
+        },
+    ];
+
+    const cardsPerView = 3;
+
+    // Auto slide effect
+    useEffect(() => {
+        const timer = setInterval(() => {
+            setCurrentSlide((prev) =>
+                prev + cardsPerView >= carouselItems.length ? 0 : prev + cardsPerView
+            );
+        }, 5000); // Change slide every 5 seconds
+
+        return () => clearInterval(timer);
+    }, []);
+
+    // Handle manual navigation
+    const goToSlide = (index) => {
+        setCurrentSlide(index);
+    };
+
+    const goToNextSlide = () => {
+        setCurrentSlide((prev) =>
+            prev + cardsPerView >= carouselItems.length ? 0 : prev + cardsPerView
+        );
+    };
+
+    const goToPrevSlide = () => {
+        setCurrentSlide((prev) =>
+            prev - cardsPerView < 0
+                ? Math.max(carouselItems.length - cardsPerView, 0)
+                : prev - cardsPerView
+        );
+    };
+
     useEffect(() => {
         const timer = setInterval(() => {
             setTimeLeft(prevTime => {
@@ -45,44 +114,6 @@ const Welcome = () => {
         return () => clearInterval(timer);
     }, []);
 
-    // Animation variants
-    const fadeIn = {
-        hidden: { opacity: 0, y: 20 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: { duration: 0.6 }
-        }
-    };
-
-    const staggerContainer = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.1
-            }
-        }
-    };
-
-    const cardVariant = {
-        hidden: { opacity: 0, y: 20 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: { duration: 0.4 }
-        }
-    };
-
-
-    const featureVariant = {
-        hidden: { opacity: 0, x: -10 },
-        visible: {
-            opacity: 1,
-            x: 0,
-            transition: { duration: 0.3 }
-        }
-    };
 
     return (
         <GuestLayout>
@@ -95,6 +126,7 @@ const Welcome = () => {
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
             >
+                 <AnimatePresence mode="wait">
                  <div className="flex flex-col min-h-screen">
                     <header className="bg-purple-600 text-white py-3">
                         <div className="container mx-auto px-4 flex justify-between items-center">
@@ -127,14 +159,18 @@ const Welcome = () => {
                         </div>
                     </header>
 
+
+                    <main className="flex-grow">
+                        
                      {/* Hero Section */}
                     <section className="py-16">
                         <div className="container mx-auto px-4 text-center">
                         <h1 className="text-4xl md:text-5xl font-bold mb-6">
                             যখনই প্রশ্ন, তখনই উত্তর <br />
                             <span className="inline-flex items-center" style={{marginTop:'20px'}}>
-                            ২৪/৭ &nbsp;<span>
-                                <img src="/assets/images/nexes-background.png" alt="Nexes.ai" className="w-50" style={{width:'240px'}}/>
+                            ২৪/৭ &nbsp;<span className="text-purple-600 text-purple-600 bg-purple-100 px-3 py-1 rounded-lg rotate-header">
+                                {/* <img src="/assets/images/nexes-background.png" alt="Nexes.ai" className="w-50" style={{width:'240px'}}/> */}
+                                Nexes AI
                                </span> &nbsp; আপনার পাশে
                             </span>
                         </h1>
@@ -146,265 +182,365 @@ const Welcome = () => {
                         </button>
                         </div>
                     </section>
-
-                    <main className="flex-grow">
                         {/* Video Section */}
-                        <section className="py-16">
-                        <div className="container mx-auto px-4 text-center">
-                            <div className="relative max-w-3xl mx-auto rounded-lg overflow-hidden shadow-lg">
+                    <section>
+                    <div className="container mx-auto px-4 text-center">
+                        <div className="relative max-w-3xl mx-auto rounded-lg overflow-hidden shadow-lg">
+                        <img
+                            src="/assets/images/video-thumbnail.png"
+                            alt="How to get started with Nexes AI"
+                            width={1200}
+                            height={675}
+                            className="w-full h-auto"
+                        />
+                        <div className="absolute inset-0 flex items-center justify-center">
+                            <button className="bg-white/80 rounded-full p-4 shadow-md hover:bg-white hover:shadow-lg transition duration-300">
+                            <Play className="h-8 w-8 text-purple-600" />
+                            </button>
+                        </div>
+                        </div>
+                    </div>
+                    </section>
+
+                    {/* Partners Section */}
+                    <section className="py-28">
+                    <div className="container mx-auto px-4 text-center">
+                        <h2 className="text-xl font-semibold mb-8">১,২০০+ স্কুল, কলেজ ও বিশ্ববিদ্যালয়ের শিক্ষার্থী স্মার্টভাবে পড়াশোনার জন্য বেছে নিয়েছে Nexes AI</h2>
+                        <div className="grid mx-auto">
+                        
+                            <div className="flex items-center justify-center">
                             <img
-                                src="/assets/images/video-thumbnail.png"
-                                alt="How to get started with Nexes AI"
-                                width={1200}
-                                height={675}
-                                className="w-full h-auto"
+                                src="/assets/images/institue.png"
+                                alt="Institute-logo"
+                                className="hover:opacity-100 transition duration-300"
                             />
-                            <div className="absolute inset-0 flex items-center justify-center">
-                                <button className="bg-white/80 rounded-full p-4 shadow-md hover:bg-white hover:shadow-lg transition duration-300">
-                                <Play className="h-8 w-8 text-purple-600" />
-                                </button>
                             </div>
+                        
+                        </div>
+                    </div>
+                    </section>
+
+                    {/* Study, Note, Revision Section */}
+                    <section className="py-16 bg-gray-50 study-note-revision">
+                    <div className="container mx-auto px-4 text-center">
+                    <div className="container mx-auto px-4">
+                        <div className="text-center mb-10">
+                        <div className="inline-block bg-purple-100 px-8 py-6 rounded-lg mb-4 notes-text">
+                            <h2 className="text-4xl md:text-5xl font-bold rotated-text-notes" >Study, Note, Revision</h2>
+                        </div>
+                        <p className="text-4xl md:text-5xl font-semibold">সময় বাঁচানো কি এখন বড় Challenge?</p>
+                        </div>
+
+                        <div className="flex flex-col md:flex-row gap-8 max-w-5xl mx-auto">
+                        <div className="md:w-1/2">
+                            <img
+                            src="/assets/images/student-with-laptop.png"
+                            alt="Student using Nexes AI"
+                            width={470}
+                            height={456}
+                            className="rounded-lg"
+                            />
+                        </div>
+
+                        <div className="bg-[#FFFAEB] left-image" style={{width:'50% !important'}}>
+                            <div style={{padding:'20px'}}>
+                            <h3 className="text-purple-600 font-medium mb-4 text-left">Pain points</h3>
+                            <ul className="space-y-4">
+                                <li className="flex items-start gap-3">
+                                <div className="rounded-full flex-shrink-0">
+                                <svg width="28" height="29" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect y="0.654297" width="28" height="28" rx="14" fill="#F04438"/>
+                                        <path d="M17.75 10.9043L10.25 18.4043M10.25 10.9043L17.75 18.4043" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <span className="text-left">Note, Summary, Quiz তৈরি করতে হলে যায় সারাদিন</span>
+                                </li>
+                                <li className="flex items-start gap-3">
+                                <div className="rounded-full flex-shrink-0">
+                                <svg width="28" height="29" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect y="0.654297" width="28" height="28" rx="14" fill="#F04438"/>
+                                        <path d="M17.75 10.9043L10.25 18.4043M10.25 10.9043L17.75 18.4043" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <span className="text-left">বিভিন্ন Source থেকে তথ্য নিয়ে পড়া আরও কঠিন, ও সময়সাপেক্ষ</span>
+                                </li>
+                                <li className="flex items-start gap-3">
+                                <div className="rounded-full flex-shrink-0">
+                                    
+                                    <svg width="28" height="29" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect y="0.654297" width="28" height="28" rx="14" fill="#F04438"/>
+                                        <path d="M17.75 10.9043L10.25 18.4043M10.25 10.9043L17.75 18.4043" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+
+                                </div>
+                                <span className="text-left">জটিল টপিক সহজভাবে বুঝতে প্রয়োজন 24/7 Support</span>
+                                </li>
+                            </ul>
+                            </div>
+
+                            <div style={{padding:'20px'}}>
+                            <h3 className="text-purple-600 font-medium mb-4 text-left">Solutions</h3>
+                            <ul className="space-y-4">
+                                <li className="flex items-start gap-3">
+                                    <div className="rounded-full flex-shrink-0">
+                                    <img src="/assets/images/Frame 2134281259.svg" alt="Check"  />
+                                </div>
+                                <span>মাত্র ১ মিনিটেই কম সময় তৈরি হবে Note, Summary, Quiz</span>
+                                </li>
+                                <li className="flex items-start gap-3">
+                                    <div className="rounded-full flex-shrink-0">
+                                    <img src="/assets/images/Frame 2134281259.svg" alt="Check"  />
+                                </div>
+                                <span className="text-left block">PDF, Video Link, Live Recording থেকে সহজ Study Material</span>
+                                </li>
+                                <li className="flex items-start gap-3">
+                                    <div className="rounded-full flex-shrink-0">
+                                    <img src="/assets/images/Frame 2134281259.svg" alt="Check"  />
+                                </div>
+                                <span className="text-left block">24/7 সাপোর্ট নিয়ে সব প্রশ্নের উত্তর, জটিল টপিক সহজ করবে</span>
+                                </li>
+                            </ul>
                             </div>
                         </div>
-                        </section>
 
-                        {/* Partners Section */}
-                        <section className="py-12">
-                        <div className="container mx-auto px-4 text-center">
-                            <h2 className="text-xl font-semibold mb-8">১,২০০+ স্কুল, কলেজ ও বিশ্ববিদ্যালয়ের শিক্ষার্থী স্মার্টভাবে পড়াশোনার জন্য বেছে নিয়েছে Nexes AI</h2>
-                            <div className="grid mx-auto">
-                         
-                                <div className="flex items-center justify-center">
-                                <img
-                                    src="/assets/images/institue.png"
-                                    alt="Institute-logo"
-                                    className="hover:opacity-100 transition duration-300"
-                                />
-                                </div>
-                           
-                            </div>
+                        
                         </div>
-                        </section>
 
-                         {/* Study, Note, Revision Section */}
-                         <section className="py-16 bg-gray-50 study-note-revision">
-                         <div className="container mx-auto px-4 text-center">
-                            <div className="container mx-auto px-4">
-                                <div className="text-center mb-10">
-                                <div className="inline-block bg-purple-100 px-8 py-6 rounded-lg mb-4 notes-text">
-                                    <h2 className="text-3xl font-bold rotated-text-notes" style={{fontSize:"60px"}}>Study, Note, Revision</h2>
-                                </div>
-                                <p className="text-2xl font-semibold" style={{fontSize:"60px"}}>সময় বাঁচানো কি এখন বড় Challenge?</p>
-                                </div>
+                        
+                    </div>
+                    <div className="flex justify-center mt-10">
+                        <button
+                        className="
+                            bg-purple-600 text-white font-bold
+                            py-4 px-8
+                            rounded-md
+                            hover:bg-purple-700 transition duration-300
+                            w-full
+                            max-w-[618px]
+                            text-lg
+                            sm:text-xl
+                            sm:py-4
+                            sm:px-8
+                            sm:w-[618px]
+                            h-[60px]
+                            shadow-md
+                        "
+                        style={{ fontWeight: 600, fontSize: '18px' }}
+                        >
+                        ৫০% ডিসকাউন্ট পেতে এখনই রেজিস্টার করুন
+                        </button>
+                    </div>
+                    </div>
+                    </section>
 
-                                <div className="flex flex-col md:flex-row gap-8 max-w-5xl mx-auto">
-                                <div className="md:w-1/2">
-                                    <img
-                                    src="/assets/images/student-with-laptop.png"
-                                    alt="Student using Nexes AI"
-                                    width={470}
-                                    height={456}
-                                    className="rounded-lg"
-                                    />
-                                </div>
-
-                                <div className="bg-[#FFFAEB] left-image" style={{width:'50% !important'}}>
-                                    <div style={{padding:'20px'}}>
-                                    <h3 className="text-purple-600 font-medium mb-4 text-left">Pain points</h3>
-                                    <ul className="space-y-4">
-                                        <li className="flex items-start gap-3">
-                                        <div className="rounded-full flex-shrink-0">
-                                        <svg width="28" height="29" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <rect y="0.654297" width="28" height="28" rx="14" fill="#F04438"/>
-                                                <path d="M17.75 10.9043L10.25 18.4043M10.25 10.9043L17.75 18.4043" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </div>
-                                        <span className="text-left">Note, Summary, Quiz তৈরি করতে হলে যায় সারাদিন</span>
-                                        </li>
-                                        <li className="flex items-start gap-3">
-                                        <div className="rounded-full flex-shrink-0">
-                                        <svg width="28" height="29" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <rect y="0.654297" width="28" height="28" rx="14" fill="#F04438"/>
-                                                <path d="M17.75 10.9043L10.25 18.4043M10.25 10.9043L17.75 18.4043" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-                                        </div>
-                                        <span className="text-left">বিভিন্ন Source থেকে তথ্য নিয়ে পড়া আরও কঠিন, ও সময়সাপেক্ষ</span>
-                                        </li>
-                                        <li className="flex items-start gap-3">
-                                        <div className="rounded-full flex-shrink-0">
-                                           
-                                            <svg width="28" height="29" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                                <rect y="0.654297" width="28" height="28" rx="14" fill="#F04438"/>
-                                                <path d="M17.75 10.9043L10.25 18.4043M10.25 10.9043L17.75 18.4043" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                                            </svg>
-
-                                        </div>
-                                        <span className="text-left">জটিল টপিক সহজভাবে বুঝতে প্রয়োজন 24/7 Support</span>
-                                        </li>
-                                    </ul>
-                                    </div>
-
-                                    <div style={{padding:'20px'}}>
-                                    <h3 className="text-purple-600 font-medium mb-4 text-left">Solutions</h3>
-                                    <ul className="space-y-4">
-                                       <li className="flex items-start gap-3">
-                                         <div className="rounded-full flex-shrink-0">
-                                            <img src="/assets/images/Frame 2134281259.svg" alt="Check"  />
-                                        </div>
-                                        <span>মাত্র ১ মিনিটেই কম সময় তৈরি হবে Note, Summary, Quiz</span>
-                                        </li>
-                                       <li className="flex items-start gap-3">
-                                         <div className="rounded-full flex-shrink-0">
-                                            <img src="/assets/images/Frame 2134281259.svg" alt="Check"  />
-                                        </div>
-                                        <span className="text-left block">PDF, Video Link, Live Recording থেকে সহজ Study Material</span>
-                                        </li>
-                                       <li className="flex items-start gap-3">
-                                         <div className="rounded-full flex-shrink-0">
-                                            <img src="/assets/images/Frame 2134281259.svg" alt="Check"  />
-                                        </div>
-                                        <span className="text-left block">24/7 সাপোর্ট নিয়ে সব প্রশ্নের উত্তর, জটিল টপিক সহজ করবে</span>
-                                        </li>
-                                    </ul>
-                                    </div>
-                                </div>
-
-                                
-                                </div>
-
-                               
-                            </div>
-                            <div className="flex justify-center mt-10">
-                              <button
-                                className="
-                                  bg-purple-600 text-white font-bold
-                                  py-4 px-8
-                                  rounded-md
-                                  hover:bg-purple-700 transition duration-300
-                                  w-full
-                                  max-w-[618px]
-                                  text-lg
-                                  sm:text-xl
-                                  sm:py-4
-                                  sm:px-8
-                                  sm:w-[618px]
-                                  h-[60px]
-                                  shadow-md
-                                "
-                                style={{ fontWeight: 600, fontSize: '18px' }}
-                              >
-                                ৫০% ডিসকাউন্ট পেতে এখনই রেজিস্টার করুন
-                              </button>
-                            </div>
-                            </div>
-                        </section>
-
-                        {/* Popular Features */}
-                        <section className="py-16">
-                        <div className="container mx-auto px-4">
-                            <h2 className="text-2xl font-bold mb-12">
-                            <span className="mr-2">Popular</span>
-                            <span className="text-purple-600">Feature</span>
+                   {/* Why Nexes AI Section with Carousel */}
+                    <section className="w-full bg-white py-16 flex justify-center items-center">
+                        <div className="w-full max-w-7xl mx-auto flex flex-col items-center px-2">
+                            <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-10 leading-tight text-[#1C2B36]">
+                                <span className="font-black">কেন</span> <span className="bg-[#E9D7FE] px-3 py-1 rounded text-purple-700 text-3xl md:text-4xl font-extrabold">Nexes AI?</span>
                             </h2>
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                            <div className="bg-purple-500 text-white rounded-lg p-6">
-                                <h3 className="font-bold text-lg mb-4">AI Sessions</h3>
-                                <p className="mb-6">Get instant answers to your questions with our AI-powered sessions</p>
-                                <div className="h-32 bg-purple-400 bg-opacity-30 rounded-lg"></div>
-                            </div>
-                            <div className="bg-blue-500 text-white rounded-lg p-6">
-                                <h3 className="font-bold text-lg mb-4">Explore Books</h3>
-                                <p className="mb-6">Access thousands of books and resources for your research</p>
-                                <div className="h-32 bg-blue-400 bg-opacity-30 rounded-lg"></div>
-                            </div>
-                            <div className="bg-indigo-500 text-white rounded-lg p-6">
-                                <h3 className="font-bold text-lg mb-4">AI Chat</h3>
-                                <p className="mb-6">Chat with our AI assistant to help with your studies and research</p>
-                                <div className="h-32 bg-indigo-400 bg-opacity-30 rounded-lg"></div>
-                            </div>
-                            </div>
-                        </div>
-                        </section>
-
-                        {/* Testimonials */}
-                        <section className="py-16 bg-gray-50">
-                        <div className="container mx-auto px-4">
-                            <h2 className="text-2xl font-bold mb-12 text-center">Nexes AI দিয়ে স্মার্ট পড়াশুনা করছে ৫০০+ শিক্ষার্থী</h2>
-                            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                            {[...Array(3)].map((_, i) => (
-                                <div key={i} className="mb-12">
-                                <div className="flex items-center mb-4">
-                                    <div className="w-12 h-12 rounded-full bg-gray-300 mr-4"></div>
-                                    <div>
-                                    <p className="font-medium">ছাত্র নাম</p>
-                                    <p className="text-sm text-gray-500">বিশ্ববিদ্যালয়</p>
+                            
+                            {/* Carousel Container */}
+                            <div className="relative w-full max-w-4xl">
+                                {/* Carousel Items */}
+                                <div className="overflow-hidden">
+                                    <div
+                                        className="flex transition-transform duration-500 ease-in-out"
+                                        style={{
+                                            width: `${(carouselItems.length / cardsPerView) * 100}%`,
+                                            transform: `translateX(-${(currentSlide / carouselItems.length) * 100}%)`,
+                                        }}
+                                    >
+                                        {carouselItems.map((item, index) => (
+                                            <div
+                                                key={index}
+                                                className="w-full md:w-1/3 flex-shrink-0 px-4"
+                                                style={{ maxWidth: `${100 / cardsPerView}%` }}
+                                            >
+                                                <div
+                                                    className="rounded-2xl text-white flex flex-col p-6 shadow-lg min-h-[370px]"
+                                                    style={{ backgroundColor: item.bgColor }}
+                                                >
+                                                    <h3 className="font-bold text-xl mb-2">{item.title}</h3>
+                                                    <p className="mb-4">{item.description}</p>
+                                                    <div className="mt-auto flex justify-center">
+                                                        <img
+                                                            src={item.image}
+                                                            alt={`${item.title} Demo`}
+                                                            className="rounded-lg w-full object-cover max-h-32"
+                                                        />
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        ))}
                                     </div>
                                 </div>
-                                <p className="text-gray-600 mb-6">
-                                    আমি Nexes AI ব্যবহার করে আমার পড়াশুনা আরও সহজ করেছি। এটি আমাকে সময় বাঁচাতে এবং আরও ভালো ফলাফল পেতে সাহায্য করেছে।
-                                </p>
-                                <div className="bg-purple-100 rounded-lg p-4 flex items-center justify-center">
-                                    <p className="text-purple-600">How to get started</p>
-                                </div>
-                                </div>
-                            ))}
-                            </div>
-                        </div>
-                        </section>
 
-                        {/* Comparison */}
-                        <section className="py-16">
-                        <div className="container mx-auto px-4">
-                            <h2 className="text-2xl font-bold mb-12 text-center">ChatGPT vs Nexes AI</h2>
-                            <p className="text-center mb-12 max-w-3xl mx-auto">
-                            আমাদের AI সল্যুশন ব্যবহার করে আপনার শিক্ষা ও গবেষণা আরও সহজ করুন। সময় বাঁচান, দক্ষতা বাড়ান এবং নতুন সম্ভাবনা আবিষ্কার করুন।
-                            </p>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                            <div className="bg-gray-50 p-6 rounded-lg">
-                                <div className="flex items-center mb-6">
-                                <div className="w-10 h-10 bg-green-100 rounded-lg flex items-center justify-center mr-4">
-                                    <span className="text-green-600 font-bold">C</span>
+                                {/* Navigation Buttons */}
+                                <button
+                                    onClick={goToPrevSlide}
+                                    className="absolute left-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg"
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+                                    </svg>
+                                </button>
+                                <button
+                                    onClick={goToNextSlide}
+                                    className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/80 hover:bg-white text-gray-800 p-2 rounded-full shadow-lg"
+                                >
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2} stroke="currentColor" className="w-6 h-6">
+                                        <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+                                    </svg>
+                                </button>
+
+                                {/* Dots Navigation */}
+                                <div className="flex justify-center mt-4 gap-2">
+                                    {Array.from({ length: Math.ceil(carouselItems.length / cardsPerView) }, (_, index) => (
+                                        <button
+                                            key={index}
+                                            onClick={() => goToSlide(index * cardsPerView)}
+                                            className={`w-3 h-3 rounded-full transition-colors ${
+                                                currentSlide === index * cardsPerView ? 'bg-purple-600' : 'bg-gray-300'
+                                            }`}
+                                        />
+                                    ))}
                                 </div>
-                                <h3 className="font-bold">ChatGPT</h3>
-                                </div>
-                                <ul className="space-y-4">
-                                {["AI Chat", "Document", "Project Management", "Workflow Management", "AI Writing Assistance"].map(
-                                    (item, i) => (
-                                    <li key={i} className="flex items-center">
-                                        <div className="w-4 h-4 mr-3 flex-shrink-0">
-                                        {i < 2 ? (
-                                            <Check className="h-4 w-4 text-green-500" />
-                                        ) : (
-                                            <X className="h-4 w-4 text-red-500" />
-                                        )}
-                                        </div>
-                                        <span>{item}</span>
-                                    </li>
-                                    ),
-                                )}
-                                </ul>
-                            </div>
-                            <div className="bg-gray-50 p-6 rounded-lg">
-                                <div className="flex items-center mb-6">
-                                <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
-                                    <span className="text-purple-600 font-bold">N</span>
-                                </div>
-                                <h3 className="font-bold">Nexes AI</h3>
-                                </div>
-                                <ul className="space-y-4">
-                                {["AI Chat", "Document", "Project Management", "Content Management", "AI Writing Assistance"].map(
-                                    (item) => (
-                                    <li key={item} className="flex items-center">
-                                        <Check className="h-4 w-4 text-green-500 mr-3 flex-shrink-0" />
-                                        <span>{item}</span>
-                                    </li>
-                                    ),
-                                )}
-                                </ul>
-                            </div>
                             </div>
                         </div>
-                        </section>
+                    </section>
+
+                    
+                     {/* Testimonials */}
+                    <section className="w-full bg-[#F7F6FF] py-16 flex justify-center items-center">
+                      <div className="w-full max-w-7xl mx-auto flex flex-col items-center px-2">
+                        <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-10 leading-tight text-[#1C2B36]">
+                          Nexes AI দিয়ে Smart পড়াশুনা <br className="hidden md:block" /> করছে <span className="bg-[#E9D7FE] px-3 py-1 rounded text-purple-700 text-4xl md:text-5xl ">500+</span> শিক্ষার্থী
+                        </h2>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
+                          {/* Card 1 */}
+                          <div className="bg-white rounded-xl shadow p-6 flex flex-col">
+                            <p className="text-gray-700 mb-6">আগে কোনো বিষয় বুঝতে আমার অনেক সময় লাগত, কিন্তু এখন <b>Nexus AI</b> আমার সব প্রশ্নের উত্তর দেয়ার পাশাপাশি পড়ার সহজ পথ দেখায়। যেকোনো বই সহজে সাজানো <b>Notes, Summary</b> পেতে এখন আর বই খুঁজে বেড়াতে হয় না, কারণ <b>Nexes AI</b> দিয়েই সব হচ্ছে! আমার পরীক্ষার প্রস্তুতি অনেক ভালো হয়েছে।</p>
+                            <div className="flex items-center mt-auto">
+                              <img src="/assets/images/user1.png" alt="Ashik Mahmud" className="w-10 h-10 rounded-full mr-3" />
+                              <div>
+                                <div className="font-bold">Ashik Mahmud</div>
+                                <div className="text-xs text-gray-500">Class 10<br/>Ideal School, Dhaka</div>
+                              </div>
+                            </div>
+                          </div>
+                          {/* Card 2 */}
+                          <div className="bg-white rounded-xl shadow p-6 flex flex-col">
+                            <p className="text-gray-700 mb-6">এইচএসসি পরীক্ষার জন্য পড়া সামলানো খুবই চাপের ছিল। <b>Nexes AI</b> আমার অনেক সময় বাঁচিয়েছে। আমি ভিডিও লিংক বা বই দিলেই ওখান থেকে সাজানো নোট আর কুইজ পেয়ে যাই। পড়াশোনার আগ্রহ বেড়েছে, আর প্রস্তুতিও অনেক ভালো হয়েছে।</p>
+                            <div className="flex items-center mt-auto">
+                              <img src="/assets/images/user2.png" alt="Meherun Nesa" className="w-10 h-10 rounded-full mr-3" />
+                              <div>
+                                <div className="font-bold">Meherun Nesa</div>
+                                <div className="text-xs text-gray-500">12<br/>Ideal College</div>
+                              </div>
+                            </div>
+                          </div>
+                          {/* Card 3 */}
+                          <div className="bg-white rounded-xl shadow p-6 flex flex-col">
+                            <p className="text-gray-700 mb-6">ইউনিভার্সিটির <b>Assignment, Lecture</b> আর <b>Reference Book</b> সব সামলাতে আগে একটা বিশাল <b>Pressure</b> ছিল। <b>Nexes AI</b> এখন আমার go-to টুল। আমি <b>Document</b> বা <b>Class Recording</b> দিলেই নোট থেকে <b>Summary</b> আর <b>Revision Material</b> তৈরি করে দেয়। সময় বাঁচে, আর পড়া অনেক গুছিয়ে হয়।</p>
+                            <div className="flex items-center mt-auto">
+                              <img src="/assets/images/user3.png" alt="Tanvir Rahman" className="w-10 h-10 rounded-full mr-3" />
+                              <div>
+                                <div className="font-bold">Tanvir Rahman</div>
+                                <div className="text-xs text-gray-500">BBA, 5th Semester<br/>IUB</div>
+                              </div>
+                            </div>
+                          </div>
+                          {/* Card 4 */}
+                          <div className="bg-white rounded-xl shadow p-6 flex flex-col">
+                            <p className="text-gray-700 mb-6">পরীক্ষার আগে পড়া সাজাতে আমার সমস্যা হত। <b>Note</b> বানাতে সময় লাগত, <b>Science</b> আর <b>Math</b> পড়া বুঝতে কষ্ট হত। <b>Nexes AI</b> ব্যবহার করার পর আমি যেকোনো সময়ে দ্রুত <b>Note, Summary,</b> এমনকি <b>Quiz</b> তৈরি করতে পারি। কেন যেন মনে হয় ২৪/৭ AI Chat আমার পাশে আছে। Nexes AI ছাড়া এখন পড়া অসম্ভব মনে হয়!</p>
+                            <div className="flex items-center mt-auto">
+                              <img src="/assets/images/user4.png" alt="Samia Islam" className="w-10 h-10 rounded-full mr-3" />
+                              <div>
+                                <div className="font-bold">Samia Islam</div>
+                                <div className="text-xs text-gray-500">8<br/>Nur Cant. Public School</div>
+                              </div>
+                            </div>
+                          </div>
+                          {/* Card 5 */}
+                          <div className="bg-white rounded-xl shadow p-6 flex flex-col">
+                            <p className="text-gray-700 mb-6">অনেক কনফিউশনে ছিলাম কিভাবে <b>Lecture, Homework, Reference</b> সামলাবো। <b>Nexes AI</b> এখন আমার পড়ার পার্টনার। যেকোনো ফাইল দিলেই সাজানো <b>Auto Note, Summary, Quiz</b> পাই। এমনকি পড়ার জন্য আলাদা <b>AI Chat</b> আছে, যেটা সব প্রশ্নের উত্তর দেয়।</p>
+                            <div className="flex items-center mt-auto">
+                              <img src="/assets/images/user5.png" alt="Kazi Kalif Iqbal" className="w-10 h-10 rounded-full mr-3" />
+                              <div>
+                                <div className="font-bold">Kazi Kalif Iqbal</div>
+                                <div className="text-xs text-gray-500">Class 11<br/>Dhaka Residential Model College</div>
+                              </div>
+                            </div>
+                          </div>
+                          {/* Card 6 */}
+                          <div className="bg-white rounded-xl shadow p-6 flex flex-col">
+                            <p className="text-gray-700 mb-6">আমি এখন <b>Document, Video</b> সব কিছু ঝামেলা ছাড়াই পড়তে পারি। প্রতি সপ্তাহে নতুন কিছু শিখছি। যেকোনো সময় <b>Nexes AI Research</b> বা কুইজ তৈরি করে নেই। পড়ার আগ্রহ বেড়েছে, আর পরীক্ষার প্রস্তুতিতে অনেক সাহায্য করছে।</p>
+                            <div className="flex items-center mt-auto">
+                              <img src="/assets/images/user6.png" alt="Sharmin Akter" className="w-10 h-10 rounded-full mr-3" />
+                              <div>
+                                <div className="font-bold">Sharmin Akter</div>
+                                <div className="text-xs text-gray-500">History, 3rd Year<br/>University of Dhaka</div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+
+                    {/* Comparison Section */}
+                    <section className="w-full flex justify-center items-center py-12 px-2 bg-white">
+                      <div className="w-full max-w-5xl mx-auto rounded-2xl shadow-lg p-4 md:p-10 bg-white flex flex-col items-center">
+                        <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-2 leading-tight text-[#1C2B36]">
+                          কেন ChatGPT না, Nexes AI হবে <span className="block md:inline">আপনার জন্য</span>
+                          <span className="ml-2 bg-[#E9D7FE] px-2 py-1 rounded text-purple-600 text-4xl md:text-5xl font-extrabold align-middle">Best Choice?</span>
+                        </h2>
+                        <p className="text-center text-gray-700 mt-2 mb-6 max-w-2xl text-base md:text-lg">
+                          ChatGPT একটি General Purpose AI, যা Question-Answer, Idea Generation ও General Task-এ সাহায্য করে, অপরদিকে, Nexes AI একটি Educational AI যা Students দের Note, Summary, Quiz ও Smart Tools দিয়ে পড়াশোনা ও দৈনন্দিন কাজকে আরও সহজ ও দ্রুত করে।
+                        </p>
+                        <div className="w-full flex flex-col md:flex-row gap-6 md:gap-8 justify-center items-stretch">
+                          {/* ChatGPT Card */}
+                          <div className="flex-1 bg-[#F2F4F7] rounded-xl p-6 flex flex-col shadow-md border border-gray-100">
+                         
+                          <div className="choice-card rounded-full bg-white  mb-4  shadow">
+                            <img src="/assets/images/chat-gpt.png" alt="Nexes AI" className="choice-card-image w-14 h-14 mb-4" />
+                            </div>
+                            
+                            <ul className="w-full space-y-3 text-left">
+                              <li className="flex items-center text-gray-700"><span className="text-red-500 mr-2"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#F04438"/><path d="M13.5 6.5l-7 7M6.5 6.5l7 7" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span> General Purpose</li>
+                              <li className="flex items-center text-gray-700"><span className="text-red-500 mr-2"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#F04438"/><path d="M13.5 6.5l-7 7M6.5 6.5l7 7" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span> General Users</li>
+                              <li className="flex items-center text-gray-700"><span className="text-red-500 mr-2"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#F04438"/><path d="M13.5 6.5l-7 7M6.5 6.5l7 7" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span> Academic Book Library নেই</li>
+                              <li className="flex items-center text-gray-700"><span className="text-red-500 mr-2"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#F04438"/><path d="M13.5 6.5l-7 7M6.5 6.5l7 7" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span> Quiz দেয়া যায় না</li>
+                              <li className="flex items-center text-gray-700"><span className="text-red-500 mr-2"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#F04438"/><path d="M13.5 6.5l-7 7M6.5 6.5l7 7" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span> AI Tools নেই</li>
+                              <li className="flex items-center text-gray-700"><span className="text-red-500 mr-2"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#F04438"/><path d="M13.5 6.5l-7 7M6.5 6.5l7 7" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span> Study Material তৈরি করা যায় না</li>
+                              <li className="flex items-center text-gray-700"><span className="text-red-500 mr-2"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#F04438"/><path d="M13.5 6.5l-7 7M6.5 6.5l7 7" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span> Custom Template ও Workflow নেই</li>
+                            </ul>
+                          </div>
+                          {/* Nexes AI Card */}
+                          <div className="flex-1 bg-[#F2F4F7] rounded-xl p-6 flex flex-col shadow-md border border-gray-100">
+                            <div className="choice-card rounded-full bg-white  mb-4  shadow">
+                            <img src="/assets/images/Logomark.svg" alt="Nexes AI" className="choice-card-image w-14 h-14 mb-4" />
+                            </div>
+                            <ul className="w-full space-y-3 text-left">
+                              <li className="flex items-center text-gray-700"><span className="text-green-500 mr-2"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#12B76A"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span> Education & Productivity Focused</li>
+                              <li className="flex items-center text-gray-700"><span className="text-green-500 mr-2"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#12B76A"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span> Designed for Students & Teachers</li>
+                              <li className="flex items-center text-gray-700"><span className="text-green-500 mr-2"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#12B76A"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span> স্কুল-ভার্সিটির Academic Book Library আছে</li>
+                              <li className="flex items-center text-gray-700"><span className="text-green-500 mr-2"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#12B76A"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span> Quiz দেয়া যায়</li>
+                              <li className="flex items-center text-gray-700"><span className="text-green-500 mr-2"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#12B76A"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span> AI Tools আছে</li>
+                              <li className="flex items-center text-gray-700"><span className="text-green-500 mr-2"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#12B76A"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span> Study Material তৈরি করা যায়</li>
+                              <li className="flex items-center text-gray-700"><span className="text-green-500 mr-2"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#12B76A"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span> Custom Template ও Workflow আছে</li>
+                            </ul>
+                          </div>
+                        </div>
+                        {/* CTA Bar */}
+                        <div className="w-full mt-8">
+                          <div className="bg-[#7F56D9] text-white rounded-lg px-4 py-4 flex flex-col md:flex-row items-center justify-between text-center md:text-left">
+                            <span className="font-semibold text-base md:text-lg">ChatGPT Premium থেকে ৭৫% কম দামে Nexes AI কিনতে এখনই রেজিস্ট্রেশন করুন</span>
+                            <button className="mt-3 md:mt-0 bg-white text-[#7F56D9] font-bold py-2 px-6 rounded-md hover:bg-gray-100 transition text-base md:text-lg">রেজিস্ট্রেশন করুন</button>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
 
                        {/* Pricing Plan Section (after footer, 100% responsive, matches screenshot) */}
                        <section className="w-full   py-16 flex justify-center items-center">
@@ -475,32 +611,41 @@ const Welcome = () => {
                               <div className="mt-8">
                                 <div className="font-bold text-lg text-[#7F56D9] mb-2 flex items-center gap-2">
                                   <span className="text-xl">&#128179;</span> Payment Getway
-                                  <span className="ml-auto"><img src="/dummy-sslcommerz.png" alt="SSLCommerz" className="inline h-6" /></span>
+                                  <span className="ml-auto"><img src="/assets/images/ssl-logo.png" alt="SSLCommerz" className="inline h-10" /></span>
                                 </div>
                                 <div className="bg-white border border-[#E5E7EB] rounded-lg p-4 flex flex-wrap gap-3 items-center justify-start">
                                   {/* Dummy payment icons */}
-                                  <img src="/dummy-visa.png" alt="Visa" className="h-8" />
-                                  <img src="/dummy-mastercard.png" alt="Mastercard" className="h-8" />
-                                  <img src="/dummy-nagad.png" alt="Nagad" className="h-8" />
-                                  <img src="/dummy-bkash.png" alt="bKash" className="h-8" />
-                                  <img src="/dummy-rocket.png" alt="Rocket" className="h-8" />
-                                  <img src="/dummy-upay.png" alt="Upay" className="h-8" />
-                                  <img src="/dummy-amex.png" alt="Amex" className="h-8" />
+                                  <img src="/assets/images/Bkash.svg" alt="Visa" className="h-8" />
+                                  <img src="/assets/images/DBB.svg" alt="Nagad" className="h-8" />
+                                  <img src="/assets/images/rocket.svg" alt="Rocket" className="h-8" />
+                                  <img src="/assets/images/Upay.svg" alt="Upay" className="h-8" />
+                                  <img src="/assets/images/dutch.svg" alt="dutch" className="h-8" />
+                                  <img src="/assets/images/city.svg" alt="city" className="h-8" />
+                                  <img src="/assets/images/Prime_Bank.svg" alt="Prime_Bank" className="h-8" />
                                   <span className="text-gray-400 font-semibold ml-2">+ More</span>
                                 </div>
-                                <div className="flex flex-wrap gap-3 mt-4">
-                                  <img src="/dummy-bkash2.png" alt="bKash" className="h-8" />
-                                  <img src="/dummy-mycash.png" alt="MyCash" className="h-8" />
-                                  <img src="/dummy-okk.png" alt="OK Wallet" className="h-8" />
-                                  <img src="/dummy-rocket2.png" alt="Rocket" className="h-8" />
-                                  <img src="/dummy-ab.png" alt="AB Bank" className="h-8" />
-                                  <img src="/dummy-surecash.png" alt="SureCash" className="h-8" />
-                                  <img src="/dummy-tcash.png" alt="Tcash" className="h-8" />
-                                  <img src="/dummy-dmoney.png" alt="Dmoney" className="h-8" />
+                                <div className="flex flex-col  py-14 gap-2">
+                                  {/* First row */}
+                                  <div className="flex flex-row gap-6 mb-2">
+                                    <img src="/assets/images/gateway/image-124.png" alt="bKash" className="h-10" />
+                                    <img src="/assets/images/gateway/image-127.png" alt="MyCash" className="h-10" />
+                                    <img src="/assets/images/gateway/image-130.png" alt="OK Wallet" className="h-10" />
+                                    <img src="/assets/images/gateway/image-125.png" alt="Rocket" className="h-10" />
+                                    <img src="/assets/images/gateway/image-128.png" alt="AB Bank" className="h-10" />
+                                    <img src="/assets/images/gateway/image-131.png" alt="SureCash" className="h-10" />
+                                  </div>
+                                  {/* Second row */}
+                                  <div className="flex flex-row gap-6">
+                                    <img src="/assets/images/gateway/image-126.png" alt="M Cash" className="h-10" />
+                                   
+                                    <img src="/assets/images/gateway/image-129.png" alt="t-cash" className="h-10" />
+                                    <img src="/assets/images/gateway/image-132.png" alt="Dmoney"  />
+                                    {/* Add more images if needed to make 6 in the second row */}
+                                  </div>
                                 </div>
                               </div>
                               <button type="submit" className="w-full bg-[#7F56D9] text-white font-bold py-4 rounded-md mt-8 text-lg flex items-center justify-center gap-2 disabled:opacity-60">
-                                <span className="material-icons">lock</span> অর্ডার করুন ৳ ১৯৯.০০
+                                <span className="material-icons"> <img src="/assets/images/lock.svg" alt="" /> </span> অর্ডার করুন ৳ ১৯৯.০০
                               </button>
                             </form>
                           </div>
@@ -514,7 +659,7 @@ const Welcome = () => {
                               </div>
                               <div className="flex justify-between items-center border-t pt-3">
                                 <div className="flex items-center gap-2">
-                                  <img src="/dummy-product.png" alt="Product" className="w-10 h-10 rounded" />
+                                  <img src="/assets/images/Logomark.svg" alt="Product" className="w-10 h-10 rounded" />
                                   <span className="font-medium">বেসিক প্যাকেজ ( Lifetime)</span>
                                 </div>
                                 <span className="font-bold text-[#7F56D9]">x 1 ৳199.00</span>
@@ -585,10 +730,12 @@ const Welcome = () => {
                         <p>&copy; {new Date().getFullYear()} Nexes AI. All rights reserved.</p>
                         </div>
                     </footer>
-                
-                    
+
+                 
+
                     </main>
                     </div>
+                </AnimatePresence>
             </motion.div>
 
         </GuestLayout>
