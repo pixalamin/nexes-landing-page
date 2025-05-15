@@ -185,7 +185,7 @@ const Welcome = () => {
                         {/* Video Section */}
                     <section>
                     <div className="container mx-auto px-4 text-center">
-                        <div className="relative max-w-3xl mx-auto rounded-lg overflow-hidden shadow-lg">
+                        {/* <div className="relative max-w-3xl mx-auto rounded-lg overflow-hidden shadow-lg">
                         <img
                             src="/assets/images/video-thumbnail.png"
                             alt="How to get started with Nexes AI"
@@ -198,12 +198,46 @@ const Welcome = () => {
                             <Play className="h-8 w-8 text-purple-600" />
                             </button>
                         </div>
-                        </div>
+                        </div> */}
+
+                        {/* <div className="max-w-7xl mx-auto px-4 py-8 md:pb-16 text-center"> */}
+                          
+                        <div className="flex flex-wrap justify-center mt-10 items-center gap-11">
+                          <img src="/assets/images/university/image-133.png" alt="company-1" />
+                          <img src="/assets/images/university/image-98.png" alt="buet" />
+                          <img src="/assets/images/university/image-99.png" alt="brac" />
+                          <img src="/assets/images/university/image-100.png" alt="bubt" />
+                          <img src="/assets/images/university/image-101.png" alt="brac-versity" />
+                          <img src="/assets/images/university/image-102.png" alt="bup" />
+                          <img src="/assets/images/university/image-103.png" alt="diu" />
+                          <img src="/assets/images/university/image-104.png" alt="manaart" />
+                          <img src="/assets/images/university/image-105.png" alt="iuu" />
+                          <img src="/assets/images/university/image-106.png" alt="nsu" />
+                          <img src="/assets/images/university/image 107-2x.png" alt="uiu" />
+                          <img src="/assets/images/university/image-108.png" alt="ulab" />
+                          <img src="/assets/images/university/image-110.png" alt="wub" />
+                          <img src="/assets/images/university/image-111.png" alt="east-west"  />
+                          <img src="/assets/images/university/image-112.png" alt="jahangir" />
+                          <img src="/assets/images/university/image-109.png" alt="image-109" />
+                          <img src="/assets/images/university/image-113.png" alt="image-132" />
+                          <img src="/assets/images/university/image-114.png" alt="image-114" />
+                          <img src="/assets/images/university/image-134.png" alt="134" />
+                          <img src="/assets/images/university/image-135.png" alt="135" />
+                          <img src="/assets/images/university/image-136.png" alt="136" />
+                          <img src="/assets/images/university/image-138.png" alt="ruet" />
+                          <img src="/assets/images/university/image-139.png" alt="ruet" />
+                          <img src="/assets/images/university/image-141.png" alt="ruet" />
+                          <img src="/assets/images/university/image-142.png" alt="ruet" />
+                          <img src="/assets/images/university/image-143.png" alt="ruet" />
+                          <img src="/assets/images/university/image-144.png" alt="ruet" />
+                          
+                      </div>
+                   {/* </div> */}
                     </div>
                     </section>
 
                     {/* Partners Section */}
-                    <section className="py-28">
+                    {/* <section className="py-28">
                     <div className="container mx-auto px-4 text-center">
                         <h2 className="text-xl font-semibold mb-8">১,২০০+ স্কুল, কলেজ ও বিশ্ববিদ্যালয়ের শিক্ষার্থী স্মার্টভাবে পড়াশোনার জন্য বেছে নিয়েছে Nexes AI</h2>
                         <div className="grid mx-auto">
@@ -218,7 +252,7 @@ const Welcome = () => {
                         
                         </div>
                     </div>
-                    </section>
+                    </section> */}
 
                     {/* Study, Note, Revision Section */}
                     <section className="py-16 bg-gray-50 study-note-revision">
@@ -602,8 +636,8 @@ const Welcome = () => {
                     <section className="w-full py-16">
                       <div className="container mx-auto px-4">
                         <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center" style={{lineHeight: '1.2'}}>
-                          <span className="bg-[#f9f5ff] px-4 py-2 rounded"> 
-                            <span className="rotated-text-order">অর্ডার </span> </span> করতে সঠিক তথ্য  <br />    
+                          <span className="bg-[#f9f5ff] px-2 py-2 rounded"> 
+                            <span className="rotated-text-order">অর্ডার </span>  </span> &nbsp;করতে সঠিক তথ্য  <br />    
                         </h2>
                         <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center" style={{marginTop:"-24px"}}>
                           দিয়ে নিচের ফর্ম পূরণ করুন

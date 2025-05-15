@@ -31,11 +31,15 @@
 
   .rotated-text-order{
     display: inline-block;
-    transform: rotate(-10deg);
+    transform: rotate(-3deg);
     font-weight: bold;
     font-size: 48px;
     color: #111827;
-  }
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    -ms-transform: rotate(-3deg);
+    -o-transform: rotate(-3deg);
+}
 
   /* //notes text */
 
