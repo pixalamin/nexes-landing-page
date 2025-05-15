@@ -152,13 +152,17 @@ const Welcome = () => {
                         <section className="py-16">
                         <div className="container mx-auto px-4 text-center">
                             <div className="relative max-w-3xl mx-auto rounded-lg overflow-hidden shadow-lg">
-                            <div className="aspect-w-16 aspect-h-9 bg-purple-100 flex items-center justify-center">
-                                <div className="text-center">
-                                <p className="text-purple-600 mb-4">How to get started</p>
-                                <button className="bg-white rounded-full p-4 shadow-md hover:shadow-lg transition duration-300">
-                                    <Play className="h-8 w-8 text-purple-600" />
+                            <img
+                                src="/assets/images/video-thumbnail.png"
+                                alt="How to get started with Nexes AI"
+                                width={1200}
+                                height={675}
+                                className="w-full h-auto"
+                            />
+                            <div className="absolute inset-0 flex items-center justify-center">
+                                <button className="bg-white/80 rounded-full p-4 shadow-md hover:bg-white hover:shadow-lg transition duration-300">
+                                <Play className="h-8 w-8 text-purple-600" />
                                 </button>
-                                </div>
                             </div>
                             </div>
                         </div>
@@ -167,92 +171,132 @@ const Welcome = () => {
                         {/* Partners Section */}
                         <section className="py-12">
                         <div className="container mx-auto px-4 text-center">
-                            <h2 className="text-xl font-semibold mb-8">Nexes এর সাথে যারা কাজ করছে তারা কিভাবে?</h2>
-                            <div className="grid grid-cols-3 md:grid-cols-5 gap-6 max-w-4xl mx-auto">
-                            {[...Array(10)].map((_, i) => (
-                                <div key={i} className="flex items-center justify-center">
-                                {/* <Image
-                                    src={`/placeholder.svg?height=40&width=80`}
-                                    alt="Partner logo"
-                                    width={80}
-                                    height={40}
-                                    className="opacity-70 hover:opacity-100 transition duration-300"
-                                /> */}
+                            <h2 className="text-xl font-semibold mb-8">১,২০০+ স্কুল, কলেজ ও বিশ্ববিদ্যালয়ের শিক্ষার্থী স্মার্টভাবে পড়াশোনার জন্য বেছে নিয়েছে Nexes AI</h2>
+                            <div className="grid mx-auto">
+                         
+                                <div className="flex items-center justify-center">
+                                <img
+                                    src="/assets/images/institue.png"
+                                    alt="Institute-logo"
+                                    className="hover:opacity-100 transition duration-300"
+                                />
                                 </div>
-                            ))}
+                           
                             </div>
                         </div>
                         </section>
 
-                        {/* Features Section */}
-                        <section className="py-16">
-                        <div className="container mx-auto px-4">
-                            <h2 className="text-2xl font-bold text-center mb-12">শিক্ষা, গবেষণা, ব্যবসায় প্রতিটি ক্ষেত্রে সমস্যার সমাধান</h2>
-                            <div className="flex flex-col md:flex-row gap-8">
-                            <div className="md:w-1/2">
-                                <div className="bg-gray-200 h-64 rounded-lg"></div>
-                            </div>
-                            <div className="md:w-1/2">
-                                <ul className="space-y-4">
-                                <li className="flex items-start">
-                                    <div className="bg-red-100 p-1 rounded-full mr-3 mt-1">
-                                    <X className="h-4 w-4 text-red-500" />
-                                    </div>
-                                    <div>
-                                    <p className="font-medium">Struggling with endless research?</p>
-                                    </div>
-                                </li>
-                                <li className="flex items-start">
-                                    <div className="bg-red-100 p-1 rounded-full mr-3 mt-1">
-                                    <X className="h-4 w-4 text-red-500" />
-                                    </div>
-                                    <div>
-                                    <p className="font-medium">Can't keep up with deadlines?</p>
-                                    </div>
-                                </li>
-                                <li className="flex items-start">
-                                    <div className="bg-red-100 p-1 rounded-full mr-3 mt-1">
-                                    <X className="h-4 w-4 text-red-500" />
-                                    </div>
-                                    <div>
-                                    <p className="font-medium">Struggling with content creation?</p>
-                                    </div>
-                                </li>
-                                <li className="flex items-start">
-                                    <div className="bg-green-100 p-1 rounded-full mr-3 mt-1">
-                                    <Check className="h-4 w-4 text-green-500" />
-                                    </div>
-                                    <div>
-                                    <p className="font-medium">AI-powered research tools make essays</p>
-                                    </div>
-                                </li>
-                                <li className="flex items-start">
-                                    <div className="bg-green-100 p-1 rounded-full mr-3 mt-1">
-                                    <Check className="h-4 w-4 text-green-500" />
-                                    </div>
-                                    <div>
-                                    <p className="font-medium">Organize your deadlines</p>
-                                    </div>
-                                </li>
-                                <li className="flex items-start">
-                                    <div className="bg-green-100 p-1 rounded-full mr-3 mt-1">
-                                    <Check className="h-4 w-4 text-green-500" />
-                                    </div>
-                                    <div>
-                                    <p className="font-medium">Get better grades</p>
-                                    </div>
-                                </li>
-                                </ul>
-                            </div>
-                            </div>
-                        </div>
-                        </section>
+                         {/* Study, Note, Revision Section */}
+                         <section className="py-16 bg-gray-50">
+                         <div className="container mx-auto px-4 text-center">
+                            <div className="container mx-auto px-4">
+                                <div className="text-center mb-10">
+                                <div className="inline-block bg-purple-100 px-6 py-2 rounded-lg mb-4">
+                                    <h2 className="text-3xl font-bold">Study, Note, Revision</h2>
+                                </div>
+                                <p className="text-2xl font-semibold">সময় বাঁচানো কি এখন বড় Challenge?</p>
+                                </div>
 
-                        {/* CTA Banner */}
-                        <section className="bg-purple-600 text-white py-4">
-                        <div className="container mx-auto px-4 text-center">
-                            <button className="text-sm font-medium hover:underline">এখনই সাবস্ক্রাইব করুন</button>
-                        </div>
+                                <div className="flex flex-col md:flex-row gap-8 max-w-5xl mx-auto">
+                                <div className="md:w-1/2">
+                                    <img
+                                    src="/assets/images/student-with-laptop.png"
+                                    alt="Student using Nexes AI"
+                                    width={470}
+                                    height={456}
+                                    className="rounded-lg"
+                                    />
+                                </div>
+
+                                <div className="bg-[#FFFAEB] left-image" style={{width:'50% !important'}}>
+                                    <div style={{padding:'20px'}}>
+                                    <h3 className="text-purple-600 font-medium mb-4 text-left">Pain points</h3>
+                                    <ul className="space-y-4">
+                                        <li className="flex items-start gap-3">
+                                        <div className="rounded-full flex-shrink-0">
+                                        <svg width="28" height="29" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect y="0.654297" width="28" height="28" rx="14" fill="#F04438"/>
+                                                <path d="M17.75 10.9043L10.25 18.4043M10.25 10.9043L17.75 18.4043" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        <span className="text-left">Note, Summary, Quiz তৈরি করতে হলে যায় সারাদিন</span>
+                                        </li>
+                                        <li className="flex items-start gap-3">
+                                        <div className="rounded-full flex-shrink-0">
+                                        <svg width="28" height="29" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect y="0.654297" width="28" height="28" rx="14" fill="#F04438"/>
+                                                <path d="M17.75 10.9043L10.25 18.4043M10.25 10.9043L17.75 18.4043" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+                                        </div>
+                                        <span className="text-left">বিভিন্ন Source থেকে তথ্য নিয়ে পড়া আরও কঠিন, ও সময়সাপেক্ষ</span>
+                                        </li>
+                                        <li className="flex items-start gap-3">
+                                        <div className="rounded-full flex-shrink-0">
+                                           
+                                            <svg width="28" height="29" viewBox="0 0 28 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <rect y="0.654297" width="28" height="28" rx="14" fill="#F04438"/>
+                                                <path d="M17.75 10.9043L10.25 18.4043M10.25 10.9043L17.75 18.4043" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                            </svg>
+
+                                        </div>
+                                        <span className="text-left">জটিল টপিক সহজভাবে বুঝতে প্রয়োজন 24/7 Support</span>
+                                        </li>
+                                    </ul>
+                                    </div>
+
+                                    <div style={{padding:'20px'}}>
+                                    <h3 className="text-purple-600 font-medium mb-4 text-left">Solutions</h3>
+                                    <ul className="space-y-4">
+                                       <li className="flex items-start gap-3">
+                                         <div className="rounded-full flex-shrink-0">
+                                            <img src="/assets/images/Frame 2134281259.svg" alt="Check"  />
+                                        </div>
+                                        <span>মাত্র ১ মিনিটেই কম সময় তৈরি হবে Note, Summary, Quiz</span>
+                                        </li>
+                                       <li className="flex items-start gap-3">
+                                         <div className="rounded-full flex-shrink-0">
+                                            <img src="/assets/images/Frame 2134281259.svg" alt="Check"  />
+                                        </div>
+                                        <span className="text-left block">PDF, Video Link, Live Recording থেকে সহজ Study Material</span>
+                                        </li>
+                                       <li className="flex items-start gap-3">
+                                         <div className="rounded-full flex-shrink-0">
+                                            <img src="/assets/images/Frame 2134281259.svg" alt="Check"  />
+                                        </div>
+                                        <span className="text-left block">24/7 সাপোর্ট নিয়ে সব প্রশ্নের উত্তর, জটিল টপিক সহজ করবে</span>
+                                        </li>
+                                    </ul>
+                                    </div>
+                                </div>
+
+                                
+                                </div>
+
+                               
+                            </div>
+                            <div className="flex justify-center mt-10">
+                              <button
+                                className="
+                                  bg-purple-600 text-white font-bold
+                                  py-4 px-8
+                                  rounded-md
+                                  hover:bg-purple-700 transition duration-300
+                                  w-full
+                                  max-w-[618px]
+                                  text-lg
+                                  sm:text-xl
+                                  sm:py-4
+                                  sm:px-8
+                                  sm:w-[618px]
+                                  h-[60px]
+                                  shadow-md
+                                "
+                                style={{ fontWeight: 600, fontSize: '18px' }}
+                              >
+                                ৫০% ডিসকাউন্ট পেতে এখনই রেজিস্টার করুন
+                              </button>
+                            </div>
+                            </div>
                         </section>
 
                         {/* Popular Features */}
@@ -369,157 +413,186 @@ const Welcome = () => {
                         </div>
                         </section>
 
-                        {/* Pricing */}
-                        <section className="py-16">
-                        <div className="container mx-auto px-4">
-                            <h2 className="text-2xl font-bold mb-12">
-                            <span className="bg-purple-100 px-3 py-1 rounded-lg text-purple-600 mr-2">Pricing</span>
-                            <span>plan</span>
-                            </h2>
-                            <div className="flex flex-col md:flex-row gap-8">
-                            <div className="md:w-1/2">
-                                <div className="mb-6">
-                                <h3 className="text-3xl font-bold">৳৫</h3>
-                                <p className="text-gray-500">প্রতি দিন / প্রতি ব্যবহারকারী</p>
-                                </div>
-                                <ul className="space-y-4 mb-8">
-                                <li className="flex items-center">
-                                    <Check className="h-4 w-4 text-green-500 mr-3" />
-                                    <span>সীমাহীন AI চ্যাট</span>
-                                </li>
-                                <li className="flex items-center">
-                                    <Check className="h-4 w-4 text-green-500 mr-3" />
-                                    <span>সীমাহীন ডকুমেন্ট</span>
-                                </li>
-                                <li className="flex items-center">
-                                    <Check className="h-4 w-4 text-green-500 mr-3" />
-                                    <span>প্রিমিয়াম সাপোর্ট</span>
-                                </li>
-                                </ul>
-                            </div>
-                            <div className="md:w-1/2">
-                                <div className="bg-gray-50 p-6 rounded-lg">
-                                <h3 className="font-bold mb-4">প্ল্যান ফিচার</h3>
-                                <ul className="space-y-4">
-                                    <li className="flex items-center">
-                                    <Check className="h-4 w-4 text-green-500 mr-3" />
-                                    <span>সীমাহীন AI চ্যাট</span>
-                                    </li>
-                                    <li className="flex items-center">
-                                    <Check className="h-4 w-4 text-green-500 mr-3" />
-                                    <span>সীমাহীন ডকুমেন্ট</span>
-                                    </li>
-                                    <li className="flex items-center">
-                                    <Check className="h-4 w-4 text-green-500 mr-3" />
-                                    <span>প্রিমিয়াম সাপোর্ট</span>
-                                    </li>
-                                </ul>
-                                </div>
-                            </div>
-                            </div>
+                       {/* Pricing Plan Section (after footer, 100% responsive, matches screenshot) */}
+                       <section className="w-full   py-16 flex justify-center items-center">
+                      <div className="w-full max-w-7xl mx-auto rounded-2xl shadow-lg flex flex-col md:flex-row items-stretch gap-8 px-4 md:px-12 py-10" style={{background:'#F6F2FF'}}>
+                        {/* Left: Pricing Info */}
+                        <div className="flex-1 flex flex-col justify-center items-start mb-8 md:mb-0">
+                          <div className="mb-6">
+                            <span className="inline-block bg-[#D6BBFB] px-4 py-2 rounded-lg text-4xl md:text-5xl font-bold text-[#1C2B36] mb-2 mr-2" style={{lineHeight:'1.1'}}>Pricing</span>
+                            <span className="text-4xl md:text-5xl font-bold text-[#1C2B36]">Plan</span>
+                          </div>
+                          <hr className="w-32 border-[#E9D7FE] mb-6" />
+                          <div className="flex items-end mb-2">
+                            <span className="text-3xl md:text-4xl font-bold text-[#1C2B36] mr-2">6000</span>
+                            <span className="text-base text-[#667085] font-medium mb-1">tk/year</span>
+                          </div>
+                          <div className="text-[#7F56D9] font-bold text-base md:text-lg mb-2">4,00,000 words</div>
                         </div>
-                        </section>
+                        {/* Right: Features List */}
+                        <div className="flex-1 flex flex-col justify-center">
+                          <ul className="space-y-4 text-[#1C2B36] text-base md:text-lg">
+                            <li className="flex items-start gap-3">
+                                <span className="mt-1"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#7F56D9"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+                             </span>AI Chat
+                             </li>
+                            <li className="flex items-start gap-3"><span className="mt-1"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#7F56D9"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg></span>AI Generator <span className="text-xs md:text-sm text-gray-600 mt-1 text-xs text-[#667085]">
+                                (PPT, YouTube/Audio/Video Transcript, Mind Map & more)
+                            </span>
+                            </li>
+                            <li className="flex items-start gap-3"><span className="mt-1"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#7F56D9"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span>File Upload 
+                            <span className="text-xs md:text-sm text-gray-600 mt-1">(Support for PDF, MP3, MP4, Articles, YouTube/Vimeo, PowerPoint, Text)</span></li>
 
-                        {/* Billing Section */}
-                        <section className="py-16">
-                        <div className="container mx-auto px-4">
-                            <h2 className="text-2xl font-bold mb-12 text-center">ক্রেডিট কার্ডে সহজিক তথ্য দিয়ে নিতে পারেন পূর্ণ সুবিধা</h2>
-                            <div className="max-w-3xl mx-auto">
-                            <div className="flex flex-col md:flex-row gap-8">
-                                <div className="md:w-1/2">
-                                <h3 className="font-bold mb-4">Billing details</h3>
-                                <form className="space-y-4">
-                                    <div>
-                                    <label className="block text-sm mb-1">আপনার ইমেইল</label>
-                                    <input type="email" className="w-full border rounded-md p-2" />
-                                    </div>
-                                    <div>
-                                    <label className="block text-sm mb-1">আপনার নাম</label>
-                                    <input type="text" className="w-full border rounded-md p-2" />
-                                    </div>
-                                </form>
-                                </div>
-                                <div className="md:w-1/2">
-                                <h3 className="font-bold mb-4">Your order</h3>
-                                <div className="bg-gray-50 p-4 rounded-lg mb-4">
-                                    <div className="flex justify-between mb-2">
-                                    <span>Product</span>
-                                    <span>Subtotal</span>
-                                    </div>
-                                    <div className="flex justify-between border-t pt-2">
-                                    <div className="flex items-center">
-                                        <div className="w-8 h-8 bg-purple-100 rounded-lg flex items-center justify-center mr-2">
-                                        <span className="text-purple-600 font-bold">N</span>
-                                        </div>
-                                        <span>Nexes AI Premium</span>
-                                    </div>
-                                    <span>৳ 5 / day</span>
-                                    </div>
-                                </div>
-                                <div className="flex justify-between mb-4">
-                                    <span>Subtotal</span>
-                                    <span>৳150.00</span>
-                                </div>
-                                <div className="flex justify-between font-bold">
-                                    <span>Total</span>
-                                    <span>৳150.00</span>
-                                </div>
-                                <button className="w-full bg-purple-600 text-white py-3 rounded-md mt-6 hover:bg-purple-700 transition duration-300">
-                                    Place your order
-                                </button>
-                                </div>
-                            </div>
-                            </div>
-                        </div>
-                        </section>
+                            <li className="flex items-start gap-3"><span className="mt-1"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#7F56D9"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span>Library <span className="text-xs md:text-sm text-gray-600 mt-1 text-xs text-[#667085]">(Save all Documents, Notes, Sessions, Flashcards, and Questions/Answers)</span></li>
 
-                        {/* Final CTA */}
-                        <section className="py-16 bg-gray-50">
-                        <div className="container mx-auto px-4 text-center">
-                            <h2 className="text-2xl font-bold mb-6">আপনার পড়াশুনা আরও সহজ করতে আজই শুরু করুন Nexes AI এর সাথে</h2>
-                            <button className="bg-purple-600 text-white font-medium py-3 px-8 rounded-md hover:bg-purple-700 transition duration-300">
-                            এখনই সাবস্ক্রাইব করুন
-                            </button>
-                        </div>
-                        </section>
 
-                        {/* Contact Section */}
-                        <section className="py-16 bg-gray-900 text-white">
-                        <div className="container mx-auto px-4 text-center">
-                            <h2 className="text-2xl font-bold mb-8">যেকোনো প্রয়োজনে কল করুন</h2>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-                            <div className="bg-gray-800 p-6 rounded-lg">
-                                <div className="flex items-center justify-center mb-4">
-                                <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-2">
-                                    <span className="text-purple-600 font-bold">📞</span>
+                            <li className="flex items-start gap-3"><span className="mt-1"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#7F56D9"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span>Workflow <span className="text-xs md:text-sm text-gray-600 mt-1 text-xs text-[#667085]">(Custom Workflow)</span></li>
+
+                            <li className="flex items-start gap-3"><span className="mt-1"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#7F56D9"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span>Template <span className="text-xs md:text-sm text-gray-600 mt-1 text-xs text-[#667085]">(Pre-build Template)</span></li>
+
+                            
+                            <li className="flex items-start gap-3"><span className="mt-1"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#7F56D9"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span>Custom Template <span className="text-xs md:text-sm text-gray-600 mt-1 text-xs text-[#667085]">(Create Manual Template)</span></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </section>
+                    {/* Order/Payment Section (added as per screenshot) */}
+                    <section className="w-full py-16">
+                      <div className="container mx-auto px-4">
+                        <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center" style={{lineHeight: '1.2'}}>
+                          <span className="bg-[#F6F2FF] px-4 py-2 rounded">অর্ডার</span> করতে সঠিক তথ্য<br />
+                          দিয়ে নিচের ফর্ম পূরণ করুন
+                        </h2>
+                        <div className="flex flex-col lg:flex-row gap-8 justify-center items-start">
+                          {/* Left: Billing details & Payment Gateway */}
+                          <div className="w-full lg:w-1/2 bg-white rounded-xl shadow-md p-8 mb-8 lg:mb-0">
+                            <h3 className="text-xl font-bold text-[#7F56D9] mb-6">Billing details</h3>
+                            <form className="space-y-6">
+                              <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">আপনার ইমেইল দিন, যেই ইমেইলে আপনি অ্যাক্সেস চান <span className="text-red-500">*</span></label>
+                                <input type="email" className="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-[#7F56D9]" placeholder="example@your.com" />
+                              </div>
+                              <div>
+                                <label className="block text-sm font-medium text-gray-700 mb-1">আপনার হোয়াটসঅ্যাপ নাম্বার দিন <span className="text-red-500">*</span></label>
+                                <input type="text" className="w-full border border-gray-300 rounded-md p-3 focus:outline-none focus:ring-2 focus:ring-[#7F56D9]" placeholder="+88 01711 000222" />
+                              </div>
+                              <div className="mt-8">
+                                <div className="font-bold text-lg text-[#7F56D9] mb-2 flex items-center gap-2">
+                                  <span className="text-xl">&#128179;</span> Payment Getway
+                                  <span className="ml-auto"><img src="/dummy-sslcommerz.png" alt="SSLCommerz" className="inline h-6" /></span>
                                 </div>
-                                <span>কাস্টমার সাপোর্ট</span>
+                                <div className="bg-white border border-[#E5E7EB] rounded-lg p-4 flex flex-wrap gap-3 items-center justify-start">
+                                  {/* Dummy payment icons */}
+                                  <img src="/dummy-visa.png" alt="Visa" className="h-8" />
+                                  <img src="/dummy-mastercard.png" alt="Mastercard" className="h-8" />
+                                  <img src="/dummy-nagad.png" alt="Nagad" className="h-8" />
+                                  <img src="/dummy-bkash.png" alt="bKash" className="h-8" />
+                                  <img src="/dummy-rocket.png" alt="Rocket" className="h-8" />
+                                  <img src="/dummy-upay.png" alt="Upay" className="h-8" />
+                                  <img src="/dummy-amex.png" alt="Amex" className="h-8" />
+                                  <span className="text-gray-400 font-semibold ml-2">+ More</span>
                                 </div>
-                                <button className="w-full bg-purple-600 text-white py-2 rounded-md hover:bg-purple-700 transition duration-300">
-                                কল করুন
-                                </button>
+                                <div className="flex flex-wrap gap-3 mt-4">
+                                  <img src="/dummy-bkash2.png" alt="bKash" className="h-8" />
+                                  <img src="/dummy-mycash.png" alt="MyCash" className="h-8" />
+                                  <img src="/dummy-okk.png" alt="OK Wallet" className="h-8" />
+                                  <img src="/dummy-rocket2.png" alt="Rocket" className="h-8" />
+                                  <img src="/dummy-ab.png" alt="AB Bank" className="h-8" />
+                                  <img src="/dummy-surecash.png" alt="SureCash" className="h-8" />
+                                  <img src="/dummy-tcash.png" alt="Tcash" className="h-8" />
+                                  <img src="/dummy-dmoney.png" alt="Dmoney" className="h-8" />
+                                </div>
+                              </div>
+                              <button type="submit" className="w-full bg-[#7F56D9] text-white font-bold py-4 rounded-md mt-8 text-lg flex items-center justify-center gap-2 disabled:opacity-60">
+                                <span className="material-icons">lock</span> অর্ডার করুন ৳ ১৯৯.০০
+                              </button>
+                            </form>
+                          </div>
+                          {/* Right: Order summary */}
+                          <div className="w-full lg:w-1/3 bg-[#F9F5FF] rounded-xl shadow-md p-8">
+                            <h3 className="text-xl font-bold text-[#7F56D9] mb-6">Your order</h3>
+                            <div className="bg-white rounded-lg p-4 mb-4">
+                              <div className="flex justify-between mb-2 text-gray-700 font-semibold">
+                                <span>Product</span>
+                                <span>Subtotal</span>
+                              </div>
+                              <div className="flex justify-between items-center border-t pt-3">
+                                <div className="flex items-center gap-2">
+                                  <img src="/dummy-product.png" alt="Product" className="w-10 h-10 rounded" />
+                                  <span className="font-medium">বেসিক প্যাকেজ ( Lifetime)</span>
+                                </div>
+                                <span className="font-bold text-[#7F56D9]">x 1 ৳199.00</span>
+                              </div>
                             </div>
-                            <div className="bg-gray-800 p-6 rounded-lg">
-                                <div className="flex items-center justify-center mb-4">
-                                <div className="w-10 h-10 bg-purple-100 rounded-lg flex items-center justify-center mr-2">
-                                    <span className="text-purple-600 font-bold">💬</span>
-                                </div>
-                                <span>লাইভ চ্যাট</span>
-                                </div>
-                                <button className="w-full bg-purple-600 text-white py-2 rounded-md hover:bg-purple-700 transition duration-300">
-                                চ্যাট করুন
-                                </button>
+                            <div className="flex justify-between mb-2 text-gray-700">
+                              <span>Subtotal</span>
+                              <span>৳199.00</span>
                             </div>
+                            <div className="flex justify-between font-bold text-lg">
+                              <span>Total</span>
+                              <span>৳199.00</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </section>
+                    
+                      {/* Hero CTA Section (Responsive) */}
+                      <section className="w-full bg-[#F6F2FF] py-10">
+                      <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-8">
+                        {/* Left: Text */}
+                        <div className="md:w-2/3 w-full text-left">
+                          <h2 className="text-2xl md:text-3xl font-bold text-[#1C2B36] mb-2">
+                            Nexes AI- এর সাথে এখন ঘরে বসেই <br/> পড়াশোনা হোক দ্রুত, স্মার্ট ও সহজ!
+                          </h2>
+                          <p className="text-base md:text-lg text-[#4B5563] mb-2">
+                            পড়াশোনা আরও সহজ, দ্রুত ও কার্যকর করতে আজই যুক্ত হন  <br/> Nexes AI- এর সাথে
+                          </p>
+                        </div>
+                        {/* Right: Button */}
+                        <div className="md:w-1/3 w-full flex md:justify-end justify-center">
+                          <button className=" bg-purple-600 text-white font-bold text-white font-semibold py-4 px-8 rounded-md text-base md:text-lg w-full md:w-auto   hover:bg-purple-700 transition duration-300">
+                            ৫০% ডিসকাউন্ট পেতে এখনই রেজিস্ট্রেশন করুন
+                          </button>
+                        </div>            
+                      </div>
+                    </section>
+
+                      {/* Contact Section (added) */}
+                      <section className="bg-[#0B1320] py-12">
+                        <div className="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-8">
+                            {/* Left: Text and contact info */}
+                            <div className="flex-1 text-white mb-8 md:mb-0">
+                                <h2 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">যেকোনো প্রয়োজনে<br />যোগাযোগ করো এখানেই</h2>
+                                <div className="flex flex-col sm:flex-row gap-4 mt-6">
+                                    <div className="bg-black/80 rounded-md px-5 py-3 text-base font-medium w-full sm:w-auto text-white">example@nexes.com</div>
+                                    <div className="bg-black/80 rounded-md px-5 py-3 text-base font-medium w-full sm:w-auto text-white">+880 255454 5464</div>
+                                </div>
+                            </div>
+                            {/* Right: WhatsApp box */}
+                            <div className="flex-1 flex justify-center md:justify-end w-full">
+                                <div className="bg-[#E9FBF0] rounded-xl flex items-center gap-6 px-6 py-6 w-full max-w-md shadow-lg">
+                                    <div className="flex-shrink-0">
+                                        <img src="/assets/images/whatsup.png" alt="WhatsApp" className="w-14 h-14" />
+                                    </div>
+                                    <div className="flex-1">
+                                        <div className="text-[#1C2B36] font-bold text-lg mb-1">হোয়াটসঅ্যাপ সাপোর্ট গ্রুপে যোগদান করুন</div>
+                                    </div>
+                                    <a href="https://wa.me/8802554545464" target="_blank" rel="noopener noreferrer" className="bg-[#0B1320] text-white rounded-md px-5 py-2 font-semibold text-base hover:bg-[#1C2B36] transition">যুক্ত হও</a>
+                                </div>
                             </div>
                         </div>
-                        </section>
-                    </main>
+                    </section>
 
                     <footer className="bg-purple-600 text-white py-6">
                         <div className="container mx-auto px-4 text-center">
                         <p>&copy; {new Date().getFullYear()} Nexes AI. All rights reserved.</p>
                         </div>
                     </footer>
+                
+                    
+                    </main>
                     </div>
             </motion.div>
 

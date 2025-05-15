@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { usePage, Head } from '@inertiajs/react';
-import Footer from '../Components/Footer';
+// import Footer from '../Components/Footer';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const GuestLayout = ({ children }) => {
@@ -48,7 +48,7 @@ const GuestLayout = ({ children }) => {
             </main>
 
             {/* Footer Section */}
-            <Footer />
+            {/* <Footer /> */}
 
             {/* Scroll to top button */}
             <AnimatePresence>
