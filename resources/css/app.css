@@ -10,3 +10,51 @@
 .left-image{
     width: 56% !important;
 }
+
+.rotate-text-button {
+    background-color: #d6b4fc; /* light purple */
+    border: none;
+    padding: 15px 20px;
+    border-radius: 10px;
+  }
+
+  /* //order text */
+
+  .rotated-text {
+    display: inline-block;
+    transform: rotate(-10deg);
+    font-weight: bold;
+    font-size: 48px;
+    color: #111827;
+  }
+
+  .rotated-text-order{
+    display: inline-block;
+    transform: rotate(-10deg);
+    font-weight: bold;
+    font-size: 48px;
+    color: #111827;
+  }
+
+  /* //notes text */
+
+  .study-note-revision {
+    /* margin-top: 100px; */
+    padding-top: 92px;
+    padding-bottom: 92px;
+    margin-top: 89px;
+  }
+  .notes-text{
+    margin-bottom: 36px;
+  }
+  .rotated-text-notes{
+    display: inline-block;
+    transform: rotate(-3deg);
+    font-weight: bold;
+    font-size: 48px;
+    color: #111827;
+    -webkit-transform: rotate(-3deg);
+    -moz-transform: rotate(-3deg);
+    -ms-transform: rotate(-3deg);
+    -o-transform: rotate(-3deg);
+}

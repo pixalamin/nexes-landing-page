@@ -187,14 +187,14 @@ const Welcome = () => {
                         </section>
 
                          {/* Study, Note, Revision Section */}
-                         <section className="py-16 bg-gray-50">
+                         <section className="py-16 bg-gray-50 study-note-revision">
                          <div className="container mx-auto px-4 text-center">
                             <div className="container mx-auto px-4">
                                 <div className="text-center mb-10">
-                                <div className="inline-block bg-purple-100 px-6 py-2 rounded-lg mb-4">
-                                    <h2 className="text-3xl font-bold">Study, Note, Revision</h2>
+                                <div className="inline-block bg-purple-100 px-8 py-6 rounded-lg mb-4 notes-text">
+                                    <h2 className="text-3xl font-bold rotated-text-notes" style={{fontSize:"60px"}}>Study, Note, Revision</h2>
                                 </div>
-                                <p className="text-2xl font-semibold">সময় বাঁচানো কি এখন বড় Challenge?</p>
+                                <p className="text-2xl font-semibold" style={{fontSize:"60px"}}>সময় বাঁচানো কি এখন বড় Challenge?</p>
                                 </div>
 
                                 <div className="flex flex-col md:flex-row gap-8 max-w-5xl mx-auto">
@@ -406,23 +406,16 @@ const Welcome = () => {
                         </div>
                         </section>
 
-                        {/* CTA Banner */}
-                        <section className="bg-purple-600 text-white py-4">
-                        <div className="container mx-auto px-4 text-center">
-                            <button className="text-sm font-medium hover:underline">এখনই সাবস্ক্রাইব করুন</button>
-                        </div>
-                        </section>
-
                        {/* Pricing Plan Section (after footer, 100% responsive, matches screenshot) */}
                        <section className="w-full   py-16 flex justify-center items-center">
                       <div className="w-full max-w-7xl mx-auto rounded-2xl shadow-lg flex flex-col md:flex-row items-stretch gap-8 px-4 md:px-12 py-10" style={{background:'#F6F2FF'}}>
                         {/* Left: Pricing Info */}
                         <div className="flex-1 flex flex-col justify-center items-start mb-8 md:mb-0">
                           <div className="mb-6">
-                            <span className="inline-block bg-[#D6BBFB] px-4 py-2 rounded-lg text-4xl md:text-5xl font-bold text-[#1C2B36] mb-2 mr-2" style={{lineHeight:'1.1'}}>Pricing</span>
+                            <span className="rotate-text-button inline-block bg-[#D6BBFB] px-4 py-2 rounded-lg text-4xl md:text-5xl font-bold text-[#1C2B36] mb-2 mr-2" style={{lineHeight:'1.1'}}> <span class="rotated-text">Pricing</span></span>
                             <span className="text-4xl md:text-5xl font-bold text-[#1C2B36]">Plan</span>
                           </div>
-                          <hr className="w-32 border-[#E9D7FE] mb-6" />
+                          {/* <hr className="w-32 border-[#E9D7FE] mb-6" /> */}
                           <div className="flex items-end mb-2">
                             <span className="text-3xl md:text-4xl font-bold text-[#1C2B36] mr-2">6000</span>
                             <span className="text-base text-[#667085] font-medium mb-1">tk/year</span>
@@ -432,27 +425,26 @@ const Welcome = () => {
                         {/* Right: Features List */}
                         <div className="flex-1 flex flex-col justify-center">
                           <ul className="space-y-4 text-[#1C2B36] text-base md:text-lg">
-                            <li className="flex items-start gap-3">
+                            <li className="flex items-start">
                                 <span className="mt-1"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#7F56D9"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg>
-                             </span>AI Chat
+                             </span><span style={{marginLeft:'10px'}}> AI Chat </span>
                              </li>
-                            <li className="flex items-start gap-3"><span className="mt-1"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#7F56D9"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                            </svg></span>AI Generator <span className="text-xs md:text-sm text-gray-600 mt-1 text-xs text-[#667085]">
+                            <li className="flex items-start"><span className="mt-1"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#7F56D9"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                            </svg></span><span style={{marginLeft:'10px'}}> AI Generator </span> <span className="text-xs md:text-sm text-gray-600 mt-1 text-xs text-[#667085]">
                                 (PPT, YouTube/Audio/Video Transcript, Mind Map & more)
                             </span>
                             </li>
-                            <li className="flex items-start gap-3"><span className="mt-1"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#7F56D9"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span>File Upload 
-                            <span className="text-xs md:text-sm text-gray-600 mt-1">(Support for PDF, MP3, MP4, Articles, YouTube/Vimeo, PowerPoint, Text)</span></li>
+                            <li className="flex items-start"><span className="mt-1"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#7F56D9"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span><span style={{marginLeft:'10px'}}> File Upload </span> <span className="text-xs md:text-sm text-gray-600 mt-1 text-xs text-[#667085]">(Support for PDF, MP3, MP4, Articles, YouTube/Vimeo, PowerPoint, Text)</span></li>
 
-                            <li className="flex items-start gap-3"><span className="mt-1"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#7F56D9"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span>Library <span className="text-xs md:text-sm text-gray-600 mt-1 text-xs text-[#667085]">(Save all Documents, Notes, Sessions, Flashcards, and Questions/Answers)</span></li>
+                            <li className="flex items-start"><span className="mt-1"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#7F56D9"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span><span style={{marginLeft:'10px'}}> Library </span> <span className="text-xs md:text-sm text-gray-600 mt-1 text-xs text-[#667085]">(Save all Documents, Notes, Sessions, Flashcards, and Questions/Answers)</span></li>
 
 
-                            <li className="flex items-start gap-3"><span className="mt-1"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#7F56D9"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span>Workflow <span className="text-xs md:text-sm text-gray-600 mt-1 text-xs text-[#667085]">(Custom Workflow)</span></li>
+                            <li className="flex items-start"><span className="mt-1"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#7F56D9"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span><span style={{marginLeft:'10px'}}> Workflow </span> <span className="text-xs md:text-sm text-gray-600 mt-1 text-xs text-[#667085]">(Custom Workflow)</span></li>
 
-                            <li className="flex items-start gap-3"><span className="mt-1"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#7F56D9"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span>Template <span className="text-xs md:text-sm text-gray-600 mt-1 text-xs text-[#667085]">(Pre-build Template)</span></li>
+                            <li className="flex items-start"><span className="mt-1"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#7F56D9"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span><span style={{marginLeft:'10px'}}> Template </span> <span className="text-xs md:text-sm text-gray-600 mt-1 text-xs text-[#667085]">(Pre-build Template)</span></li>
 
                             
-                            <li className="flex items-start gap-3"><span className="mt-1"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#7F56D9"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span>Custom Template <span className="text-xs md:text-sm text-gray-600 mt-1 text-xs text-[#667085]">(Create Manual Template)</span></li>
+                            <li className="flex items-start"><span className="mt-1"><svg width="20" height="20" fill="none" viewBox="0 0 20 20" ><circle cx="10" cy="10" r="10" fill="#7F56D9"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span> <span style={{marginLeft:'10px'}}> Custom Template</span> <span className="text-xs md:text-sm text-gray-600 mt-1 text-xs text-[#667085]">(Create Manual Template)</span></li>
                           </ul>
                         </div>
                       </div>
@@ -461,7 +453,10 @@ const Welcome = () => {
                     <section className="w-full py-16">
                       <div className="container mx-auto px-4">
                         <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center" style={{lineHeight: '1.2'}}>
-                          <span className="bg-[#F6F2FF] px-4 py-2 rounded">অর্ডার</span> করতে সঠিক তথ্য<br />
+                          <span className="bg-[#F6F2FF] px-4 py-2 rounded"> 
+                            <span className="rotated-text-order">অর্ডার </span> </span> করতে সঠিক তথ্য  <br />    
+                        </h2>
+                        <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center" style={{marginTop:"-24px"}}>
                           দিয়ে নিচের ফর্ম পূরণ করুন
                         </h2>
                         <div className="flex flex-col lg:flex-row gap-8 justify-center items-start">
