@@ -20,13 +20,14 @@
 
   /* //order text */
 
-  .rotated-text {
+.rotated-text {
     display: inline-block;
-    transform: rotate(-10deg);
-    font-weight: bold;
+    transform: rotate(-3deg);
+    font-weight: 800;
     font-size: 48px;
     color: #111827;
-  }
+}
+
 
   .rotated-text-order{
     display: inline-block;
@@ -84,4 +85,26 @@
     text-align: center;
     margin-top: 24px;
     margin-left: 24px;
+}
+
+.rotate-best-choice{
+    display: inline-block;
+    transform: rotate(-3deg);
+    font-weight: bold;
+    font-size: 48px;
+}
+
+
+.count-students{
+    margin-top: -26px;
+}
+.rotate-students{
+    display: inline-block;
+    transform: rotate(-3deg);
+    font-weight: bold;
+    font-size: 48px;
+}
+
+.line-height_pricing{
+    line-height: 24px;
 }

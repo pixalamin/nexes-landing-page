@@ -415,8 +415,12 @@ const Welcome = () => {
                     <section className="w-full bg-[#F7F6FF] py-16 flex justify-center items-center">
                       <div className="w-full max-w-7xl mx-auto flex flex-col items-center px-2">
                         <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-10 leading-tight text-[#1C2B36]">
-                          Nexes AI দিয়ে Smart পড়াশুনা <br className="hidden md:block" /> করছে <span className="bg-[#E9D7FE] px-3 py-1 rounded text-purple-700 text-4xl md:text-5xl ">500+</span> শিক্ষার্থী
+                          Nexes AI দিয়ে Smart পড়াশুনা <br className="hidden md:block" /> 
                         </h2>
+                        <h2 className="text-4xl md:text-5xl font-extrabold count-students text-center mb-10 leading-tight text-[#1C2B36]">
+                         করছে <span className="bg-[#E9D7FE] px-3 py-1 rounded text-purple-700 text-4xl md:text-5xl "> <span className='rotate-students'> 500+ </span></span> শিক্ষার্থী
+                        </h2>
+
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
                           {/* Card 1 */}
                           <div className="bg-white rounded-xl shadow p-6 flex flex-col">
@@ -436,7 +440,7 @@ const Welcome = () => {
                               <img src="/assets/images/student/nesa.png" alt="Meherun Nesa" className="w-10 h-10 rounded-full mr-3" />
                               <div>
                                 <div className="font-bold">Meherun Nesa</div>
-                                <div className="text-xs text-gray-500">12<br/>Ideal College</div>
+                                <div className="text-xs text-gray-500">Class 12<br/>Ideal College</div>
                               </div>
                             </div>
                           </div>
@@ -458,7 +462,7 @@ const Welcome = () => {
                               <img src="/assets/images/student/samia.png" alt="Samia Islam" className="w-10 h-10 rounded-full mr-3" />
                               <div>
                                 <div className="font-bold">Samia Islam</div>
-                                <div className="text-xs text-gray-500">8<br/>Nur Cant. Public School</div>
+                                <div className="text-xs text-gray-500">Class 8<br/>Nur Cant. Public School</div>
                               </div>
                             </div>
                           </div>
@@ -492,9 +496,18 @@ const Welcome = () => {
                     <section className="w-full flex justify-center items-center py-12 px-2 bg-white">
                       <div className="w-full max-w-5xl mx-auto rounded-2xl shadow-lg p-4 md:p-10 bg-white flex flex-col items-center">
                         <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-2 leading-tight text-[#1C2B36]">
-                          কেন ChatGPT না, Nexes AI হবে <span className="block md:inline">আপনার জন্য</span>
-                          <span className="ml-2 bg-[#E9D7FE] px-2 py-1 rounded text-purple-600 text-4xl md:text-5xl font-extrabold align-middle">Best Choice?</span>
+                          কেন ChatGPT না, Nexes AI হবে  <br/>
                         </h2>
+                        <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-2 leading-tight text-[#1C2B36]"> 
+                        আপনার জন্য <span className="ml-2 bg-[#E9D7FE] px-2 py-1 rounded text-purple-600 text-4xl md:text-5xl font-extrabold align-middle ">
+                            <span className='rotate-best-choice'>
+                            Best Choice?
+                            </span>
+                            </span>
+
+                        </h2>
+
+                        <h2 className="text-4xl md:text-5xl font-extrabold text-center mb-2 leading-tight text-[#1C2B36]"></h2>
                         <p className="text-center text-gray-700 mt-2 mb-6 max-w-2xl text-base md:text-lg">
                           ChatGPT একটি General Purpose AI, যা Question-Answer, Idea Generation ও General Task-এ সাহায্য করে, অপরদিকে, Nexes AI একটি Educational AI যা Students দের Note, Summary, Quiz ও Smart Tools দিয়ে পড়াশোনা ও দৈনন্দিন কাজকে আরও সহজ ও দ্রুত করে।
                         </p>
@@ -566,21 +579,21 @@ const Welcome = () => {
                              </span><span style={{marginLeft:'10px'}}> AI Chat </span>
                              </li>
                             <li className="flex items-start"><span className="mt-1"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#7F56D9"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                            </svg></span><span style={{marginLeft:'10px'}}> AI Generator </span> <span className="text-xs md:text-sm text-gray-600 mt-1 text-xs text-[#667085]">
+                            </svg></span><span style={{marginLeft:'10px'}}> AI Generator </span> <span className="text-xs line-height_pricing  md:text-sm text-gray-600 mt-1 text-xs text-[#667085]">
                                 (PPT, YouTube/Audio/Video Transcript, Mind Map & more)
                             </span>
                             </li>
-                            <li className="flex items-start"><span className="mt-1"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#7F56D9"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span><span style={{marginLeft:'10px'}}> File Upload </span> <span className="text-xs md:text-sm text-gray-600 mt-1 text-xs text-[#667085]">(Support for PDF, MP3, MP4, Articles, YouTube/Vimeo, PowerPoint, Text)</span></li>
+                            <li className="flex items-start"><span className="mt-1"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#7F56D9"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span><span style={{marginLeft:'10px'}}> File Upload </span> <span className="text-xs md:text-sm text-gray-600 mt-1 line-height_pricing text-xs text-[#667085]">(Support for PDF, MP3, MP4, Articles, YouTube/Vimeo, PowerPoint, Text)</span></li>
 
-                            <li className="flex items-start"><span className="mt-1"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#7F56D9"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span><span style={{marginLeft:'10px'}}> Library </span> <span className="text-xs md:text-sm text-gray-600 mt-1 text-xs text-[#667085]">(Save all Documents, Notes, Sessions, Flashcards, and Questions/Answers)</span></li>
+                            <li className="flex items-start"><span className="mt-1"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#7F56D9"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span><span style={{marginLeft:'10px'}}> Library </span> <span className="text-xs md:text-sm text-gray-600 mt-1 line-height_pricing text-xs text-[#667085]">(Save all Documents, Notes, Sessions, Flashcards, and Questions/Answers)</span></li>
 
 
-                            <li className="flex items-start"><span className="mt-1"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#7F56D9"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span><span style={{marginLeft:'10px'}}> Workflow </span> <span className="text-xs md:text-sm text-gray-600 mt-1 text-xs text-[#667085]">(Custom Workflow)</span></li>
+                            <li className="flex items-start"><span className="mt-1"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#7F56D9"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span><span style={{marginLeft:'10px'}}> Workflow </span> <span className="text-xs md:text-sm text-gray-600 mt-1 line-height_pricing text-xs text-[#667085]">(Custom Workflow)</span></li>
 
-                            <li className="flex items-start"><span className="mt-1"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#7F56D9"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span><span style={{marginLeft:'10px'}}> Template </span> <span className="text-xs md:text-sm text-gray-600 mt-1 text-xs text-[#667085]">(Pre-build Template)</span></li>
+                            <li className="flex items-start"><span className="mt-1"><svg width="20" height="20" fill="none" viewBox="0 0 20 20"><circle cx="10" cy="10" r="10" fill="#7F56D9"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span><span style={{marginLeft:'10px'}}> Template </span> <span className="text-xs md:text-sm text-gray-600 mt-1 line-height_pricing text-xs text-[#667085]">(Pre-build Template)</span></li>
 
                             
-                            <li className="flex items-start"><span className="mt-1"><svg width="20" height="20" fill="none" viewBox="0 0 20 20" ><circle cx="10" cy="10" r="10" fill="#7F56D9"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span> <span style={{marginLeft:'10px'}}> Custom Template</span> <span className="text-xs md:text-sm text-gray-600 mt-1 text-xs text-[#667085]">(Create Manual Template)</span></li>
+                            <li className="flex items-start"><span className="mt-1"><svg width="20" height="20" fill="none" viewBox="0 0 20 20" ><circle cx="10" cy="10" r="10" fill="#7F56D9"/><path d="M6 10.5l2.5 2.5L14 7.5" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span> <span style={{marginLeft:'10px'}}> Custom Template</span> <span className="text-xs md:text-sm line-height_pricing text-gray-600 mt-1 text-xs text-[#667085]">(Create Manual Template)</span></li>
                           </ul>
                         </div>
                       </div>
@@ -589,7 +602,7 @@ const Welcome = () => {
                     <section className="w-full py-16">
                       <div className="container mx-auto px-4">
                         <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center" style={{lineHeight: '1.2'}}>
-                          <span className="bg-[#F6F2FF] px-4 py-2 rounded"> 
+                          <span className="bg-[#f9f5ff] px-4 py-2 rounded"> 
                             <span className="rotated-text-order">অর্ডার </span> </span> করতে সঠিক তথ্য  <br />    
                         </h2>
                         <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center" style={{marginTop:"-24px"}}>
