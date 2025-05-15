@@ -422,7 +422,7 @@ const Welcome = () => {
                           <div className="bg-white rounded-xl shadow p-6 flex flex-col">
                             <p className="text-gray-700 mb-6">আগে কোনো বিষয় বুঝতে আমার অনেক সময় লাগত, কিন্তু এখন <b>Nexus AI</b> আমার সব প্রশ্নের উত্তর দেয়ার পাশাপাশি পড়ার সহজ পথ দেখায়। যেকোনো বই সহজে সাজানো <b>Notes, Summary</b> পেতে এখন আর বই খুঁজে বেড়াতে হয় না, কারণ <b>Nexes AI</b> দিয়েই সব হচ্ছে! আমার পরীক্ষার প্রস্তুতি অনেক ভালো হয়েছে।</p>
                             <div className="flex items-center mt-auto">
-                              <img src="/assets/images/user1.png" alt="Ashik Mahmud" className="w-10 h-10 rounded-full mr-3" />
+                              <img src="/assets/images/student/asik.png" alt="Ashik Mahmud" className="w-10 h-10 rounded-full mr-3" />
                               <div>
                                 <div className="font-bold">Ashik Mahmud</div>
                                 <div className="text-xs text-gray-500">Class 10<br/>Ideal School, Dhaka</div>
@@ -433,7 +433,7 @@ const Welcome = () => {
                           <div className="bg-white rounded-xl shadow p-6 flex flex-col">
                             <p className="text-gray-700 mb-6">এইচএসসি পরীক্ষার জন্য পড়া সামলানো খুবই চাপের ছিল। <b>Nexes AI</b> আমার অনেক সময় বাঁচিয়েছে। আমি ভিডিও লিংক বা বই দিলেই ওখান থেকে সাজানো নোট আর কুইজ পেয়ে যাই। পড়াশোনার আগ্রহ বেড়েছে, আর প্রস্তুতিও অনেক ভালো হয়েছে।</p>
                             <div className="flex items-center mt-auto">
-                              <img src="/assets/images/user2.png" alt="Meherun Nesa" className="w-10 h-10 rounded-full mr-3" />
+                              <img src="/assets/images/student/nesa.png" alt="Meherun Nesa" className="w-10 h-10 rounded-full mr-3" />
                               <div>
                                 <div className="font-bold">Meherun Nesa</div>
                                 <div className="text-xs text-gray-500">12<br/>Ideal College</div>
@@ -444,7 +444,7 @@ const Welcome = () => {
                           <div className="bg-white rounded-xl shadow p-6 flex flex-col">
                             <p className="text-gray-700 mb-6">ইউনিভার্সিটির <b>Assignment, Lecture</b> আর <b>Reference Book</b> সব সামলাতে আগে একটা বিশাল <b>Pressure</b> ছিল। <b>Nexes AI</b> এখন আমার go-to টুল। আমি <b>Document</b> বা <b>Class Recording</b> দিলেই নোট থেকে <b>Summary</b> আর <b>Revision Material</b> তৈরি করে দেয়। সময় বাঁচে, আর পড়া অনেক গুছিয়ে হয়।</p>
                             <div className="flex items-center mt-auto">
-                              <img src="/assets/images/user3.png" alt="Tanvir Rahman" className="w-10 h-10 rounded-full mr-3" />
+                              <img src="/assets/images/student/tanvir.png" alt="Tanvir Rahman" className="w-10 h-10 rounded-full mr-3" />
                               <div>
                                 <div className="font-bold">Tanvir Rahman</div>
                                 <div className="text-xs text-gray-500">BBA, 5th Semester<br/>IUB</div>
@@ -455,7 +455,7 @@ const Welcome = () => {
                           <div className="bg-white rounded-xl shadow p-6 flex flex-col">
                             <p className="text-gray-700 mb-6">পরীক্ষার আগে পড়া সাজাতে আমার সমস্যা হত। <b>Note</b> বানাতে সময় লাগত, <b>Science</b> আর <b>Math</b> পড়া বুঝতে কষ্ট হত। <b>Nexes AI</b> ব্যবহার করার পর আমি যেকোনো সময়ে দ্রুত <b>Note, Summary,</b> এমনকি <b>Quiz</b> তৈরি করতে পারি। কেন যেন মনে হয় ২৪/৭ AI Chat আমার পাশে আছে। Nexes AI ছাড়া এখন পড়া অসম্ভব মনে হয়!</p>
                             <div className="flex items-center mt-auto">
-                              <img src="/assets/images/user4.png" alt="Samia Islam" className="w-10 h-10 rounded-full mr-3" />
+                              <img src="/assets/images/student/samia.png" alt="Samia Islam" className="w-10 h-10 rounded-full mr-3" />
                               <div>
                                 <div className="font-bold">Samia Islam</div>
                                 <div className="text-xs text-gray-500">8<br/>Nur Cant. Public School</div>
@@ -466,7 +466,7 @@ const Welcome = () => {
                           <div className="bg-white rounded-xl shadow p-6 flex flex-col">
                             <p className="text-gray-700 mb-6">অনেক কনফিউশনে ছিলাম কিভাবে <b>Lecture, Homework, Reference</b> সামলাবো। <b>Nexes AI</b> এখন আমার পড়ার পার্টনার। যেকোনো ফাইল দিলেই সাজানো <b>Auto Note, Summary, Quiz</b> পাই। এমনকি পড়ার জন্য আলাদা <b>AI Chat</b> আছে, যেটা সব প্রশ্নের উত্তর দেয়।</p>
                             <div className="flex items-center mt-auto">
-                              <img src="/assets/images/user5.png" alt="Kazi Kalif Iqbal" className="w-10 h-10 rounded-full mr-3" />
+                              <img src="/assets/images/student/iqbal.png" alt="Kazi Kalif Iqbal" className="w-10 h-10 rounded-full mr-3" />
                               <div>
                                 <div className="font-bold">Kazi Kalif Iqbal</div>
                                 <div className="text-xs text-gray-500">Class 11<br/>Dhaka Residential Model College</div>
@@ -477,7 +477,7 @@ const Welcome = () => {
                           <div className="bg-white rounded-xl shadow p-6 flex flex-col">
                             <p className="text-gray-700 mb-6">আমি এখন <b>Document, Video</b> সব কিছু ঝামেলা ছাড়াই পড়তে পারি। প্রতি সপ্তাহে নতুন কিছু শিখছি। যেকোনো সময় <b>Nexes AI Research</b> বা কুইজ তৈরি করে নেই। পড়ার আগ্রহ বেড়েছে, আর পরীক্ষার প্রস্তুতিতে অনেক সাহায্য করছে।</p>
                             <div className="flex items-center mt-auto">
-                              <img src="/assets/images/user6.png" alt="Sharmin Akter" className="w-10 h-10 rounded-full mr-3" />
+                              <img src="/assets/images/student/sarmin.png" alt="Sharmin Akter" className="w-10 h-10 rounded-full mr-3" />
                               <div>
                                 <div className="font-bold">Sharmin Akter</div>
                                 <div className="text-xs text-gray-500">History, 3rd Year<br/>University of Dhaka</div>
