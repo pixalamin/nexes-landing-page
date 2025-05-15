@@ -660,34 +660,21 @@ const Welcome = () => {
                                   <span className="text-xl">&#128179;</span> Payment Getway
                                   <span className="ml-auto"><img src="/assets/images/ssl-logo.png" alt="SSLCommerz" className="inline h-10" /></span>
                                 </div>
-                                <div className="bg-white border border-[#E5E7EB] rounded-lg p-4 flex flex-wrap gap-3 items-center justify-start">
-                                  {/* Dummy payment icons */}
-                                  <img src="/assets/images/Bkash.svg" alt="Visa" className="h-8" />
-                                  <img src="/assets/images/DBB.svg" alt="Nagad" className="h-8" />
-                                  <img src="/assets/images/rocket.svg" alt="Rocket" className="h-8" />
-                                  <img src="/assets/images/Upay.svg" alt="Upay" className="h-8" />
-                                  <img src="/assets/images/dutch.svg" alt="dutch" className="h-8" />
-                                  <img src="/assets/images/city.svg" alt="city" className="h-8" />
-                                  <img src="/assets/images/Prime_Bank.svg" alt="Prime_Bank" className="h-8" />
-                                  <span className="text-gray-400 font-semibold ml-2">+ More</span>
-                                </div>
-                                <div className="flex flex-col  py-14 gap-2">
+                                <div className="bg-white border border-[#E5E7EB] rounded-lg p-4 flex flex-col py-8 gap-4">
                                   {/* First row */}
-                                  <div className="flex flex-row gap-6 mb-2">
-                                    <img src="/assets/images/gateway/image-124.png" alt="bKash" className="h-10" />
-                                    <img src="/assets/images/gateway/image-127.png" alt="MyCash" className="h-10" />
-                                    <img src="/assets/images/gateway/image-130.png" alt="OK Wallet" className="h-10" />
-                                    <img src="/assets/images/gateway/image-125.png" alt="Rocket" className="h-10" />
-                                    <img src="/assets/images/gateway/image-128.png" alt="AB Bank" className="h-10" />
-                                    <img src="/assets/images/gateway/image-131.png" alt="SureCash" className="h-10" />
+                                  <div className="flex flex-wrap justify-center gap-4">
+                                    <img src="/assets/images/gateway/image-124.png" alt="bKash" className="h-8 md:h-10" />
+                                    <img src="/assets/images/gateway/image-127.png" alt="MyCash" className="h-8 md:h-10" />
+                                    <img src="/assets/images/gateway/image-130.png" alt="OK Wallet" className="h-8 md:h-10" />
+                                    <img src="/assets/images/gateway/image-125.png" alt="Rocket" className="h-8 md:h-10" />
+                                    <img src="/assets/images/gateway/image-128.png" alt="AB Bank" className="h-8 md:h-10" />
+                                    <img src="/assets/images/gateway/image-131.png" alt="SureCash" className="h-8 md:h-10" />
                                   </div>
                                   {/* Second row */}
-                                  <div className="flex flex-row gap-6">
-                                    <img src="/assets/images/gateway/image-126.png" alt="M Cash" className="h-10" />
-                                   
-                                    <img src="/assets/images/gateway/image-129.png" alt="t-cash" className="h-10" />
-                                    <img src="/assets/images/gateway/image-132.png" alt="Dmoney"  />
-                                    {/* Add more images if needed to make 6 in the second row */}
+                                  <div className="flex flex-wrap justify-center gap-4">
+                                    <img src="/assets/images/gateway/image-126.png" alt="M Cash" className="h-8 md:h-10" />
+                                    <img src="/assets/images/gateway/image-129.png" alt="t-cash" className="h-8 md:h-10" />
+                                    <img src="/assets/images/gateway/image-132.png" alt="Dmoney" className="h-8 md:h-10" />
                                   </div>
                                 </div>
                               </div>
